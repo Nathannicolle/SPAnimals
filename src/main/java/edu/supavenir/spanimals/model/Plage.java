@@ -1,9 +1,8 @@
 // Generated with g9.
 
-package edu.supavenir.model;
+package edu.supavenir.spanimals.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -16,8 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
-@Entity(name="ESPECE")
-public class Espece implements Serializable {
+@Entity(name="PLAGE")
+public class Plage implements Serializable {
 
     /** Primary key. */
     protected static final String PK = "id";
@@ -51,19 +50,13 @@ public class Espece implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ID", unique=true, nullable=false, precision=10)
     private int id;
-    @Column(name="LIBELLE", nullable=false, length=50)
+    @Column(name="LIBELLE", length=10)
     private String libelle;
-    @Column(name="FRAIS", precision=19, scale=4)
-    private BigDecimal frais;
-    @OneToMany(mappedBy="espece")
-    private Set<Race> race;
-    @OneToMany(mappedBy="espece")
-    private Set<Animal> animal;
-    @OneToMany(mappedBy="espece")
-    private Set<Caracteristiqueespece> caracteristiqueespece;
+    @OneToMany(mappedBy="plage")
+    private Set<Horaire> horaire;
 
     /** Default constructor. */
-    public Espece() {
+    public Plage() {
         super();
     }
 
@@ -104,91 +97,37 @@ public class Espece implements Serializable {
     }
 
     /**
-     * Access method for frais.
+     * Access method for horaire.
      *
-     * @return the current value of frais
+     * @return the current value of horaire
      */
-    public BigDecimal getFrais() {
-        return frais;
+    public Set<Horaire> getHoraire() {
+        return horaire;
     }
 
     /**
-     * Setter method for frais.
+     * Setter method for horaire.
      *
-     * @param aFrais the new value for frais
+     * @param aHoraire the new value for horaire
      */
-    public void setFrais(BigDecimal aFrais) {
-        frais = aFrais;
+    public void setHoraire(Set<Horaire> aHoraire) {
+        horaire = aHoraire;
     }
 
     /**
-     * Access method for race.
-     *
-     * @return the current value of race
-     */
-    public Set<Race> getRace() {
-        return race;
-    }
-
-    /**
-     * Setter method for race.
-     *
-     * @param aRace the new value for race
-     */
-    public void setRace(Set<Race> aRace) {
-        race = aRace;
-    }
-
-    /**
-     * Access method for animal.
-     *
-     * @return the current value of animal
-     */
-    public Set<Animal> getAnimal() {
-        return animal;
-    }
-
-    /**
-     * Setter method for animal.
-     *
-     * @param aAnimal the new value for animal
-     */
-    public void setAnimal(Set<Animal> aAnimal) {
-        animal = aAnimal;
-    }
-
-    /**
-     * Access method for caracteristiqueespece.
-     *
-     * @return the current value of caracteristiqueespece
-     */
-    public Set<Caracteristiqueespece> getCaracteristiqueespece() {
-        return caracteristiqueespece;
-    }
-
-    /**
-     * Setter method for caracteristiqueespece.
-     *
-     * @param aCaracteristiqueespece the new value for caracteristiqueespece
-     */
-    public void setCaracteristiqueespece(Set<Caracteristiqueespece> aCaracteristiqueespece) {
-        caracteristiqueespece = aCaracteristiqueespece;
-    }
-
-    /**
-     * Compares the key for this instance with another Espece.
+     * Compares the key for this instance with another Plage.
      *
      * @param other The object to compare to
-     * @return True if other object is instance of class Espece and the key objects are equal
+     * @return True if other object is instance of class Plage and the key objects are equal
      */
     private boolean equalKeys(Object other) {
         if (this==other) {
             return true;
         }
-        if (!(other instanceof Espece)) {
+        if (!(other instanceof Plage)) {
             return false;
         }
-        Espece that = (Espece) other;
+        Plage that = (Plage) other;
         if (this.getId() != that.getId()) {
             return false;
         }
@@ -196,15 +135,15 @@ public class Espece implements Serializable {
     }
 
     /**
-     * Compares this instance with another Espece.
+     * Compares this instance with another Plage.
      *
      * @param other The object to compare to
      * @return True if the objects are the same
      */
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Espece)) return false;
-        return this.equalKeys(other) && ((Espece)other).equalKeys(this);
+        if (!(other instanceof Plage)) return false;
+        return this.equalKeys(other) && ((Plage)other).equalKeys(this);
     }
 
     /**
@@ -228,7 +167,7 @@ public class Espece implements Serializable {
      */
     @Override
     public String toString() {
-        StringBuffer sb = new StringBuffer("[Espece |");
+        StringBuffer sb = new StringBuffer("[Plage |");
         sb.append(" id=").append(getId());
         sb.append("]");
         return sb.toString();

@@ -1,0 +1,57 @@
+{"properties": [
+  {
+    "name": "handlebars.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.enabled'"
+  },
+  {
+    "name": "handlebars.prefix",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.prefix'"
+  },
+  {
+    "name": "handlebars.suffix",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.suffix'"
+  },
+  {
+    "name": "handlebars.cache",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.cache'"
+  },
+  {
+    "name": "handlebars.registerMessageHelper",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.registerMessageHelper'"
+  },
+  {
+    "name": "handlebars.failOnMissingFile",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.failOnMissingFile'"
+  },
+  {
+    "name": "handlebars.bindI18nToMessageSource",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.bindI18nToMessageSource'"
+  },
+  {
+    "name": "handlebars.prettyPrint",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.prettyPrint'"
+  },
+  {
+    "name": "handlebars.infiniteLoops",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.infiniteLoops'"
+  },
+  {
+    "name": "handlebars.registerMessageHelper",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.registerMessageHelper'"
+  },
+  {
+    "name": "handlebars.registerMessageHelper",
+    "type": "java.lang.String",
+    "description": "A description for 'handlebars.registerMessageHelper'"
+  }
+]}

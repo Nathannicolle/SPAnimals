@@ -1,8 +1,9 @@
 // Generated with g9.
 
-package edu.supavenir.model;
+package edu.supavenir.spanimals.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -15,8 +16,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
-@Entity(name="JOURSEMAINE")
-public class Joursemaine implements Serializable {
+@Entity(name="ESPECE")
+public class Espece implements Serializable {
 
     /** Primary key. */
     protected static final String PK = "id";
@@ -50,13 +51,19 @@ public class Joursemaine implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ID", unique=true, nullable=false, precision=10)
     private int id;
-    @Column(name="LIBELLE", length=12)
+    @Column(name="LIBELLE", nullable=false, length=50)
     private String libelle;
-    @OneToMany(mappedBy="joursemaine")
-    private Set<Horaire> horaire;
+    @Column(name="FRAIS", precision=19, scale=4)
+    private BigDecimal frais;
+    @OneToMany(mappedBy="espece")
+    private Set<Race> race;
+    @OneToMany(mappedBy="espece")
+    private Set<Animal> animal;
+    @OneToMany(mappedBy="espece")
+    private Set<Caracteristiqueespece> caracteristiqueespece;
 
     /** Default constructor. */
-    public Joursemaine() {
+    public Espece() {
         super();
     }
 
@@ -97,37 +104,91 @@ public class Joursemaine implements Serializable {
     }
 
     /**
-     * Access method for horaire.
+     * Access method for frais.
      *
-     * @return the current value of horaire
+     * @return the current value of frais
      */
-    public Set<Horaire> getHoraire() {
-        return horaire;
+    public BigDecimal getFrais() {
+        return frais;
     }
 
     /**
-     * Setter method for horaire.
+     * Setter method for frais.
      *
-     * @param aHoraire the new value for horaire
+     * @param aFrais the new value for frais
      */
-    public void setHoraire(Set<Horaire> aHoraire) {
-        horaire = aHoraire;
+    public void setFrais(BigDecimal aFrais) {
+        frais = aFrais;
     }
 
     /**
-     * Compares the key for this instance with another Joursemaine.
+     * Access method for race.
+     *
+     * @return the current value of race
+     */
+    public Set<Race> getRace() {
+        return race;
+    }
+
+    /**
+     * Setter method for race.
+     *
+     * @param aRace the new value for race
+     */
+    public void setRace(Set<Race> aRace) {
+        race = aRace;
+    }
+
+    /**
+     * Access method for animal.
+     *
+     * @return the current value of animal
+     */
+    public Set<Animal> getAnimal() {
+        return animal;
+    }
+
+    /**
+     * Setter method for animal.
+     *
+     * @param aAnimal the new value for animal
+     */
+    public void setAnimal(Set<Animal> aAnimal) {
+        animal = aAnimal;
+    }
+
+    /**
+     * Access method for caracteristiqueespece.
+     *
+     * @return the current value of caracteristiqueespece
+     */
+    public Set<Caracteristiqueespece> getCaracteristiqueespece() {
+        return caracteristiqueespece;
+    }
+
+    /**
+     * Setter method for caracteristiqueespece.
+     *
+     * @param aCaracteristiqueespece the new value for caracteristiqueespece
+     */
+    public void setCaracteristiqueespece(Set<Caracteristiqueespece> aCaracteristiqueespece) {
+        caracteristiqueespece = aCaracteristiqueespece;
+    }
+
+    /**
+     * Compares the key for this instance with another Espece.
      *
      * @param other The object to compare to
-     * @return True if other object is instance of class Joursemaine and the key objects are equal
+     * @return True if other object is instance of class Espece and the key objects are equal
      */
     private boolean equalKeys(Object other) {
         if (this==other) {
             return true;
         }
-        if (!(other instanceof Joursemaine)) {
+        if (!(other instanceof Espece)) {
             return false;
         }
-        Joursemaine that = (Joursemaine) other;
+        Espece that = (Espece) other;
         if (this.getId() != that.getId()) {
             return false;
         }
@@ -135,15 +196,15 @@ public class Joursemaine implements Serializable {
     }
 
     /**
-     * Compares this instance with another Joursemaine.
+     * Compares this instance with another Espece.
      *
      * @param other The object to compare to
      * @return True if the objects are the same
      */
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Joursemaine)) return false;
-        return this.equalKeys(other) && ((Joursemaine)other).equalKeys(this);
+        if (!(other instanceof Espece)) return false;
+        return this.equalKeys(other) && ((Espece)other).equalKeys(this);
     }
 
     /**
@@ -167,7 +228,7 @@ public class Joursemaine implements Serializable {
      */
     @Override
     public String toString() {
-        StringBuffer sb = new StringBuffer("[Joursemaine |");
+        StringBuffer sb = new StringBuffer("[Espece |");
         sb.append(" id=").append(getId());
         sb.append("]");
         return sb.toString();

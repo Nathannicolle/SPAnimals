@@ -5,13 +5,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import edu.supavenir.model.Animal;
+import edu.supavenir.spanimals.model.Animal;
 import edu.supavenir.spanimals.repositories.AnimalRepository;
 
 @Controller
 public class TestController {
 	@Autowired
 	private AnimalRepository repo;
+
+	@GetMapping("/")
+	public String redirectToIndex() {
+		return "index";
+	}
 
 	@GetMapping("add/animal")
 	public @ResponseBody String addAnimal() {

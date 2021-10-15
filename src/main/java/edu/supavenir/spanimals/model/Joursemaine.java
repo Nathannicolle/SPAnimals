@@ -1,6 +1,6 @@
 // Generated with g9.
 
-package edu.supavenir.model;
+package edu.supavenir.spanimals.model;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;
@@ -9,12 +9,14 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
-@Entity(name="CARACTERISTIQUE")
-public class Caracteristique implements Serializable {
+@Entity(name="JOURSEMAINE")
+public class Joursemaine implements Serializable {
 
     /** Primary key. */
     protected static final String PK = "id";
@@ -45,17 +47,16 @@ public class Caracteristique implements Serializable {
     }
 
     @Id
-    @Column(name="ID", unique=true, nullable=false, length=50)
-    private String id;
-    @Column(name="LIBELLE", length=50)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="ID", unique=true, nullable=false, precision=10)
+    private int id;
+    @Column(name="LIBELLE", length=12)
     private String libelle;
-    @OneToMany(mappedBy="caracteristique")
-    private Set<Caracteristiquerace> caracteristiquerace;
-    @OneToMany(mappedBy="caracteristique")
-    private Set<Caracteristiqueespece> caracteristiqueespece;
+    @OneToMany(mappedBy="joursemaine")
+    private Set<Horaire> horaire;
 
     /** Default constructor. */
-    public Caracteristique() {
+    public Joursemaine() {
         super();
     }
 
@@ -64,7 +65,7 @@ public class Caracteristique implements Serializable {
      *
      * @return the current value of id
      */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -73,7 +74,7 @@ public class Caracteristique implements Serializable {
      *
      * @param aId the new value for id
      */
-    public void setId(String aId) {
+    public void setId(int aId) {
         id = aId;
     }
 
@@ -96,73 +97,53 @@ public class Caracteristique implements Serializable {
     }
 
     /**
-     * Access method for caracteristiquerace.
+     * Access method for horaire.
      *
-     * @return the current value of caracteristiquerace
+     * @return the current value of horaire
      */
-    public Set<Caracteristiquerace> getCaracteristiquerace() {
-        return caracteristiquerace;
+    public Set<Horaire> getHoraire() {
+        return horaire;
     }
 
     /**
-     * Setter method for caracteristiquerace.
+     * Setter method for horaire.
      *
-     * @param aCaracteristiquerace the new value for caracteristiquerace
+     * @param aHoraire the new value for horaire
      */
-    public void setCaracteristiquerace(Set<Caracteristiquerace> aCaracteristiquerace) {
-        caracteristiquerace = aCaracteristiquerace;
+    public void setHoraire(Set<Horaire> aHoraire) {
+        horaire = aHoraire;
     }
 
     /**
-     * Access method for caracteristiqueespece.
-     *
-     * @return the current value of caracteristiqueespece
-     */
-    public Set<Caracteristiqueespece> getCaracteristiqueespece() {
-        return caracteristiqueespece;
-    }
-
-    /**
-     * Setter method for caracteristiqueespece.
-     *
-     * @param aCaracteristiqueespece the new value for caracteristiqueespece
-     */
-    public void setCaracteristiqueespece(Set<Caracteristiqueespece> aCaracteristiqueespece) {
-        caracteristiqueespece = aCaracteristiqueespece;
-    }
-
-    /**
-     * Compares the key for this instance with another Caracteristique.
+     * Compares the key for this instance with another Joursemaine.
      *
      * @param other The object to compare to
-     * @return True if other object is instance of class Caracteristique and the key objects are equal
+     * @return True if other object is instance of class Joursemaine and the key objects are equal
      */
     private boolean equalKeys(Object other) {
         if (this==other) {
             return true;
         }
-        if (!(other instanceof Caracteristique)) {
+        if (!(other instanceof Joursemaine)) {
             return false;
         }
-        Caracteristique that = (Caracteristique) other;
-        Object myId = this.getId();
-        Object yourId = that.getId();
-        if (myId==null ? yourId!=null : !myId.equals(yourId)) {
+        Joursemaine that = (Joursemaine) other;
+        if (this.getId() != that.getId()) {
             return false;
         }
         return true;
     }
 
     /**
-     * Compares this instance with another Caracteristique.
+     * Compares this instance with another Joursemaine.
      *
      * @param other The object to compare to
      * @return True if the objects are the same
      */
     @Override
     public boolean equals(Object other) {
-        if (!(other instanceof Caracteristique)) return false;
-        return this.equalKeys(other) && ((Caracteristique)other).equalKeys(this);
+        if (!(other instanceof Joursemaine)) return false;
+        return this.equalKeys(other) && ((Joursemaine)other).equalKeys(this);
     }
 
     /**
@@ -174,11 +155,7 @@ public class Caracteristique implements Serializable {
     public int hashCode() {
         int i;
         int result = 17;
-        if (getId() == null) {
-            i = 0;
-        } else {
-            i = getId().hashCode();
-        }
+        i = getId();
         result = 37*result + i;
         return result;
     }
@@ -190,7 +167,7 @@ public class Caracteristique implements Serializable {
      */
     @Override
     public String toString() {
-        StringBuffer sb = new StringBuffer("[Caracteristique |");
+        StringBuffer sb = new StringBuffer("[Joursemaine |");
         sb.append(" id=").append(getId());
         sb.append("]");
         return sb.toString();
@@ -203,7 +180,7 @@ public class Caracteristique implements Serializable {
      */
     public Map<String, Object> getPrimaryKey() {
         Map<String, Object> ret = new LinkedHashMap<String, Object>(6);
-        ret.put("id", getId());
+        ret.put("id", Integer.valueOf(getId()));
         return ret;
     }
 

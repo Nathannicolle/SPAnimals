@@ -1,6 +1,6 @@
 // Generated with g9.
 
-package edu.supavenir.model;
+package edu.supavenir.spanimals.model;
 
 import java.io.Serializable;
 import java.sql.Clob;

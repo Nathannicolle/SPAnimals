@@ -1,6 +1,6 @@
 // Generated with g9.
 
-package edu.supavenir.model;
+package edu.supavenir.spanimals.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -70,13 +70,13 @@ public class Animal implements Serializable {
 	private boolean adopte;
 	@Column(name = "FRAIS", precision = 19, scale = 4)
 	private BigDecimal frais;
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	@JoinColumn(name = "IDRACE", nullable = true)
 	private Race race;
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	@JoinColumn(name = "IDESPECE", nullable = true)
 	private Espece espece;
-	@ManyToOne(optional = false)
+	@ManyToOne(optional = true)
 	@JoinColumn(name = "IDREFUGE", nullable = true) // nullable à mettre à false
 	private Refuge refuge;
 	@OneToMany(mappedBy = "animal")

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.supavenir.spanimals.model.Refuge;
+import edu.supavenir.spanimals.repositories.AnimalRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 
 @Controller
@@ -15,12 +16,15 @@ public class TestController {
 
 	private RefugeRepository repo1;
 
+	private AnimalRepository repoAnimal;
+
 	@GetMapping("/")
 	public String redirectToIndex() {
 		return "index";
 	}
 
 	@GetMapping("/refuge")
+
 	public String redirectToForm() {
 		return "formRefuge";
 	}
@@ -32,6 +36,10 @@ public class TestController {
 		repo1.saveAndFlush(refuge);
 
 		return "refuge ajouté :" + refuge;
+	}
+
+	public String returnPageRefuge() {
+		return "refuge";
 	}
 
 }

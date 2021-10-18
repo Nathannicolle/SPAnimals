@@ -11,11 +11,16 @@ import edu.supavenir.spanimals.repositories.AnimalRepository;
 @Controller
 public class TestController {
 	@Autowired
-	private AnimalRepository repo;
+	private AnimalRepository repoAnimal;
 
 	@GetMapping("/")
 	public String redirectToIndex() {
 		return "index";
+	}
+
+	@GetMapping("/refuge")
+	public String returnPageRefuge() {
+		return "refuge";
 	}
 
 	@GetMapping("add/animal")
@@ -24,7 +29,7 @@ public class TestController {
 		medor.setNom("Medor");
 		medor.setCouleur("Noir");
 		medor.setDescription("Gentil");
-		if (repo.save(medor) != null) {
+		if (repoAnimal.save(medor) != null) {
 			return medor + " ajouté";
 		}
 

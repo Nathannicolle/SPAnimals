@@ -12,10 +12,10 @@ import edu.supavenir.spanimals.repositories.AnimalRepository;
 @RestController
 public class TestRestController {
 	@Autowired
-	private AnimalRepository repo;
+	private AnimalRepository repoAnimal;
 
 	@GetMapping("/rest/animals")
 	public List<Animal> indexAction() {
-		return repo.findAll();
+		return repoAnimal.findAll();
 	}
 }

@@ -38,8 +38,9 @@ public class TestController {
 		return "refuge ajouté :" + refuge;
 	}
 
-	public String returnPageRefuge() {
-		return "refuge";
-	}
+//	@GetMapping("/infosRefuge")
+//	public String returnPageRefuge() {
+//		return "refuge";
+//	}
 
 }

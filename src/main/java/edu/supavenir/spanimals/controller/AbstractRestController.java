@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/rest/models")
-public class AbstractRestController<T> {
+abstract public class AbstractRestController<T> {
 	@Autowired
 	private JpaRepository<T, Integer> repo;
 

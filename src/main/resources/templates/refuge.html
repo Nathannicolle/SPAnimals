@@ -1,9 +1,14 @@
 {{> inc/header}}
-
-<h1>Bienvenue sur la page du refuge :</h1>
 <v-app>
-	<h2><% refuge.nom %></h2>
+	<h1>Bienvenue sur la page du refuge : <% refuge.nom %></h1>
+	<ul>
+		<li>Localisation : <% refuge.localisation %></li>
+		<li>Rue : <% refuge.numeroetrue %></li>
+		<li>Complément d'adresse : <% refuge.complementad %></li>
+		<li>Code Postal/Ville : <% refuge.cp %> <% refuge.ville %></li>
+		<li>Numéro de téléphone : <% refuge.tel %></li>
+		<li>Description : <% refuge.description %></li>
+	</ul>
 </v-app>
 {{> inc/footer}}
 {{{vue}}}
-

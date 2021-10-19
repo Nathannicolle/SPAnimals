@@ -29,4 +29,10 @@ public class RefugeController {
 		vue.addData("refuge", refugeRepo.getById(id));
 		return "refuge";
 	}
+
+	@GetMapping("/listRefuges")
+	public String showAllRefuge() {
+		vue.addData("refuges", refugeRepo.findAll());
+		return "listRefuges";
+	}
 }

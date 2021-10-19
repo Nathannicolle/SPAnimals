@@ -1,0 +1,9 @@
+{{> inc/header}}
+<v-app>
+	<h1>Vous êtes sur la page des refuges</h1>
+	<ul v-for="oneRefuge in refuges">
+		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %></li>
+	</ul>
+</v-app>
+{{> inc/footer}}
+{{{vue}}}

@@ -10,3 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/rest/models")
+<<<<<<< HEAD
+=======
+abstract public class AbstractRestController<T> {
+	@Autowired
+	private JpaRepository<T, Integer> repo;
+
+	@GetMapping()
+	public List<T> indexAction() {
+		return repo.findAll();
+	}
+}
+>>>>>>> b614b2fb5d0aa3c55308b42273bbf7267468dfd7

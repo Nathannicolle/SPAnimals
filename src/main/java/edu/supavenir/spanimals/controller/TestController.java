@@ -39,9 +39,10 @@ public class TestController {
 		return "refuge ajouté :" + refuge;
 	}
 
-	public String returnPageRefuge() {
-		return "refuge";
-	}
+//	@GetMapping("/infosRefuge")
+//	public String returnPageRefuge() {
+//		return "refuge";
+//	}
 
 	@GetMapping("/delete/{id}")
 	public RedirectView delete(@PathVariable int id, RedirectAttributes attrs) {

@@ -26,7 +26,7 @@ public class RefugeController {
 
 	@GetMapping("/refuge/{id}")
 	public String indexAction(@PathVariable Integer id) {
-		vue.addData("orgas", refugeRepo.getById(id));
+		vue.addData("refuge", refugeRepo.getById(id));
 		return "refuge";
 	}
 }

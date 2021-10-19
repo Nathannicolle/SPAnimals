@@ -10,12 +10,3 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/rest/models")
-public class AbstractRestController<T> {
-	@Autowired
-	private JpaRepository<T, Integer> repo;
-
-	@GetMapping()
-	public List<T> indexAction() {
-		return repo.findAll();
-	}
-}

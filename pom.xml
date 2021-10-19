@@ -60,6 +60,7 @@
     		<artifactId>handlebars-spring-boot-starter</artifactId>
     		<version>0.3.3</version>
 		</dependency>
+	
 	</dependencies>
 
 	<build>

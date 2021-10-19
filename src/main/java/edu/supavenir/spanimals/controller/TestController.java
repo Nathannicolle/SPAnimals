@@ -10,7 +10,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import edu.supavenir.spanimals.model.Refuge;
-import edu.supavenir.spanimals.repositories.AnimalRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 
 @Controller
@@ -18,8 +17,6 @@ public class TestController {
 	@Autowired
 
 	private RefugeRepository refugeRepo;
-
-	private AnimalRepository repoAnimal;
 
 	@GetMapping("/")
 	public String redirectToIndex() {

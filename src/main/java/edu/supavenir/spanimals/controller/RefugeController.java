@@ -33,6 +33,7 @@ public class RefugeController {
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
+		vue.addMethod("deleteRefuge", "console.log(refuge)", "refuge");
 		return "listRefuges";
 	}
 }

@@ -6,20 +6,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
 
+import edu.supavenir.spanimals.model.Joursemaine;
 import edu.supavenir.spanimals.model.Refuge;
-import edu.supavenir.spanimals.repositories.AnimalRepository;
+import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 
 @Controller
 public class TestController {
 	@Autowired
-
 	private RefugeRepository refugeRepo;
 
-	private AnimalRepository repoAnimal;
+	@Autowired
+	private JourRepository jourRepo;
 
 	@GetMapping("/")
 	public String redirectToIndex() {
@@ -39,18 +38,23 @@ public class TestController {
 		return "refuge ajouté :" + refuge;
 	}
 
+	@GetMapping("/jour")
+
+	public String redirectToFormJour() {
+		return "jour";
+	}
+
+	@PostMapping("/jourSemaine")
+	public @ResponseBody String addJour(Joursemaine jour) {
+		Joursemaine libelle = new Joursemaine();
+		jourRepo.saveAndFlush(jour);
+		return "jour ajouté :" + jour;
+	}
+
 //	@GetMapping("/infosRefuge")
 //	public String returnPageRefuge() {
 //		return "refuge";
 //	}
-
-	@GetMapping("/delete/{id}")
-	public RedirectView delete(@PathVariable int id, RedirectAttributes attrs) {
-		refugeRepo.deleteById(id);
-		refugeRepo.flush();
-		attrs.addFlashAttribute("msgDelete", ("Vous avez bien supprimé l'élément <b>" + id + "</b>"));
-		return new RedirectView("/");
-	}
 
 	@GetMapping("/modifier/{id}")
 	public String formModify(@PathVariable String id) {

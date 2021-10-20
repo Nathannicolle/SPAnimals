@@ -2,7 +2,7 @@
 <v-app>
 	<h1>Vous êtes sur la page des refuges</h1>
 	<ul v-for="oneRefuge in refuges">
-		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %></li>
+		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %> - <a v-on:click="deleteRefuge(oneRefuge)">supprimer</a></li>
 	</ul>
 </v-app>
 {{> inc/footer}}

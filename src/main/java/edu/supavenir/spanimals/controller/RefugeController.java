@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 import io.github.jeemv.springboot.vuejs.VueJS;
+import io.github.jeemv.springboot.vuejs.utilities.Http;
 
 @Controller
 @RequestMapping("/infosRefuge")
@@ -33,6 +34,7 @@ public class RefugeController {
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
+		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
 		return "listRefuges";
 	}
 }

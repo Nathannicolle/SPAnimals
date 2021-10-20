@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import org.springframework.web.servlet.view.RedirectView;
 
 import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
@@ -40,14 +38,6 @@ public class TestController {
 //	public String returnPageRefuge() {
 //		return "refuge";
 //	}
-
-	@GetMapping("/delete/{id}")
-	public RedirectView delete(@PathVariable int id, RedirectAttributes attrs) {
-		refugeRepo.deleteById(id);
-		refugeRepo.flush();
-		attrs.addFlashAttribute("msgDelete", ("Vous avez bien supprimé l'élément <b>" + id + "</b>"));
-		return new RedirectView("/");
-	}
 
 	@GetMapping("/modifier/{id}")
 	public String formModify(@PathVariable String id) {

@@ -7,7 +7,7 @@ import edu.supavenir.animals.restController.AbstractRestController;
 import edu.supavenir.spanimals.model.Refuge;
 
 @RestController
-@RequestMapping("/rest/organization")
+@RequestMapping("/rest/refuge")
 public class RestRefugeController extends AbstractRestController<Refuge> {
 
 }

@@ -51,11 +51,6 @@ public class TestController {
 		return "jour ajouté :" + jour;
 	}
 
-//	@GetMapping("/infosRefuge")
-//	public String returnPageRefuge() {
-//		return "refuge";
-//	}
-
 	@GetMapping("/modifier/{id}")
 	public String formModify(@PathVariable String id) {
 		return "formRefuge";

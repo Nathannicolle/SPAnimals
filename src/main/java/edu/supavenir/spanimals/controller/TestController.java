@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.supavenir.spanimals.model.Joursemaine;
 import edu.supavenir.spanimals.model.Refuge;
-<<<<<<< HEAD
 import edu.supavenir.spanimals.repositories.JourRepository;
-=======
->>>>>>> 6694b1d9827b615d34bca1c383306ac314aa49d1
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 
 @Controller
@@ -20,12 +17,9 @@ public class TestController {
 	@Autowired
 	private RefugeRepository refugeRepo;
 
-<<<<<<< HEAD
 	@Autowired
 	private JourRepository jourRepo;
 
-=======
->>>>>>> 6694b1d9827b615d34bca1c383306ac314aa49d1
 	@GetMapping("/")
 	public String redirectToIndex() {
 		return "index";

@@ -1,6 +1,6 @@
 {{> inc/header}}
 <v-app>
-	<v-form v-model="valid">
+	<v-form action="addRefuge()" method="POST">
 		<div class="field">
 			<label>Nom</label>
 			<input type="text" name="Nom" required="required" placeholder="Nom">
@@ -42,7 +42,8 @@
 			<input type="text" name="prerequis" required placeholder="Prerequis">
 		</div>
 		
-		<input class="ui primary button" type="submit" value="Valider">
+		<v-btn color="primary">Valider</v-btn>
+		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
 	</v-form>
 </v-app>
  {{> inc/footer}}

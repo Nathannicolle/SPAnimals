@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.supavenir.spanimals.model.Joursemaine;
-import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 
@@ -25,18 +24,18 @@ public class TestController {
 		return "index";
 	}
 
-	@GetMapping("/refuge")
+//	@GetMapping("/refuge")
+//
+//	public String redirectToForm() {
+//		return "formRefuge";
+//	}
 
-	public String redirectToForm() {
-		return "formRefuge";
-	}
-
-	@PostMapping("/refugeAdd")
-	public @ResponseBody String addAction(Refuge refuge) {
-		Refuge refuge2 = new Refuge();
-		refugeRepo.saveAndFlush(refuge);
-		return "refuge ajouté :" + refuge;
-	}
+//	@PostMapping("/refugeAdd")
+//	public @ResponseBody String addAction(Refuge refuge) {
+//		Refuge refuge2 = new Refuge();
+//		refugeRepo.saveAndFlush(refuge);
+//		return "refuge ajouté :" + refuge;
+//	}
 
 	@GetMapping("/jour")
 

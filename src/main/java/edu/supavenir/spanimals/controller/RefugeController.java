@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 import io.github.jeemv.springboot.vuejs.VueJS;
 import io.github.jeemv.springboot.vuejs.utilities.Http;
@@ -31,10 +32,16 @@ public class RefugeController {
 		return "refuge";
 	}
 
+	@GetMapping("/refuge")
+	public String redirectToForm() {
+		vue.addData("refuge", new Refuge());
+		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('ajouté')"), "refuge");
+		return "formRefuge";
+	}
+
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
-		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "console.log('ajouté')"), "refuge");
 		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
 		return "listRefuges";
 	}

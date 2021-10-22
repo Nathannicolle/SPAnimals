@@ -36,6 +36,7 @@ public class RefugeController {
 		vue.addData("refuges", refugeRepo.findAll());
 		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "console.log('ajouté')"), "refuge");
 		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
+		vue.addMethod("modifRefuge", Http.put("'/rest/refuge/'", "console.log('modifié')"), "refuge");
 		return "listRefuges";
 	}
 }

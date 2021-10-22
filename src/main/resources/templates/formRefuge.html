@@ -1,51 +1,53 @@
-
-
-<form action="refugeAdd" method="POST" >
-<div class="field">
-<label>Nom</label>
-<input type="text" name="Nom" required="required" placeholder="Nom">
-</div>
-<div class="field">
-<label>Localisation</label>
-<input type="text" name="localisation" required placeholder="Localisation">
-</div>
-<div class="field">
-<label>NumeroEtRue</label>
-<input type="text" name="numeroetrue" required placeholder="NumeroRue">
-</div>
-<div class="field">
-<label>ComplementAd</label>
-<input type="text" name="complementad" required placeholder="ComplementAd">
-</div>
-<div class="field">
-<label>Code Postal</label>
-<input type="text" name="cp" required placeholder="cp">
-</div>
-<div class="field">
-<label>Ville</label>
-<input type="text" name="ville" required placeholder="ville">
-</div>
-<div class="field">
-<label>tel</label>
-<input type="text" name="tel" required placeholder="tel">
-</div>
-<div class="field">
-<label>Descriptif</label>
-<textarea name="description" required placeholder="Descriptif"></textarea>
-</div>
-<div class="field">
-<label>Libelle</label>
-<input type="text" name="libelle" required placeholder="Libelle">
-</div>
-<div class="field">
-<label>Prerequis</label>
-<input type="text" name="prerequis" required placeholder="Prerequis">
-</div>
-
-<input class="ui primary button" type="submit" value="Valider">
-</form>
-
- 
+{{> inc/header}}
+<v-app>
+	<v-form action="addRefuge()" method="POST">
+		<div class="field">
+			<label>Nom</label>
+			<input type="text" name="Nom" required="required" placeholder="Nom">
+		</div>
+		<div class="field">
+			<label>Localisation</label>
+			<input type="text" name="localisation" required placeholder="Localisation">
+		</div>
+		<div class="field">
+			<label>NumeroEtRue</label>
+			<input type="text" name="numeroetrue" required placeholder="NumeroRue">
+		</div>
+		<div class="field">
+			<label>ComplementAd</label>
+			<input type="text" name="complementad" required placeholder="ComplementAd">
+		</div>
+		<div class="field">
+			<label>Code Postal</label>
+			<input type="text" name="cp" required placeholder="cp">
+		</div>
+		<div class="field">
+			<label>Ville</label>
+			<input type="text" name="ville" required placeholder="ville">
+		</div>
+		<div class="field">
+			<label>tel</label>
+			<input type="text" name="tel" required placeholder="tel">
+		</div>
+		<div class="field">
+			<label>Descriptif</label>
+			<textarea name="description" required placeholder="Descriptif"></textarea>
+		</div>
+		<div class="field">
+			<label>Libelle</label>
+			<input type="text" name="libelle" required placeholder="Libelle">
+		</div>
+		<div class="field">
+			<label>Prerequis</label>
+			<input type="text" name="prerequis" required placeholder="Prerequis">
+		</div>
+		
+		<v-btn color="primary">Valider</v-btn>
+		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
+	</v-form>
+</v-app>
+ {{> inc/footer}}
+{{{vue}}}
  
 
 

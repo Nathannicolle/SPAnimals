@@ -63,6 +63,7 @@ public class TestController {
 	}
 
 	@GetMapping("/modifRefuge/{id}")
+
 	public String formModify(@PathVariable String id) {
 		return "formRefuge";
 	}

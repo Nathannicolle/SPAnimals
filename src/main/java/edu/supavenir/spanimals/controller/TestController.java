@@ -29,7 +29,7 @@ public class TestController {
 //	public String redirectToForm() {
 //		return "formRefuge";
 //	}
-
+//
 //	@PostMapping("/refugeAdd")
 //	public @ResponseBody String addAction(Refuge refuge) {
 //		Refuge refuge2 = new Refuge();

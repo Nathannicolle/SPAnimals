@@ -35,14 +35,15 @@ public class RefugeController {
 	@GetMapping("/refuge")
 	public String redirectToForm() {
 		vue.addData("refuge", new Refuge());
-		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('ajouté')"), "refuge");
+		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('refuge ajouté')"), "refuge");
 		return "formRefuge";
 	}
 
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
-		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
+		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('refuge supprimé')"),
+				"refuge");
 		return "listRefuges";
 	}
 }

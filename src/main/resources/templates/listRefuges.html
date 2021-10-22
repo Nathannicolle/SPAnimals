@@ -2,8 +2,54 @@
 <v-app>
 	<h1>Vous êtes sur la page des refuges</h1>
 	<ul v-for="oneRefuge in refuges">
-		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></li>
+		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %>
+		<v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn>
+		<v-btn v-on:click="form.visible=!form.visible" color="primary">Modifier</v-btn>
+
+		</li>
 	</ul>
+	
+	
+
+	<v-form>
+		<div class="field">
+			<label>Nom</label>
+			<input type="text" v-model="refuge.nom" required="required" placeholder="Nom">
+		</div>
+		<div class="field">
+			<label>Localisation</label>
+			<input type="text" v-model="refuge.localisation" required placeholder="Localisation">
+		</div>
+		<div class="field">
+			<label>NumeroEtRue</label>
+			<input type="text" v-model="refuge.numeroetrue" required placeholder="NumeroRue">
+		</div>
+		<div class="field">
+			<label>ComplementAd</label>
+			<input type="text" v-model="refuge.complementad" required placeholder="ComplementAd">
+		</div>
+		<div class="field">
+			<label>Code Postal</label>
+			<input type="text" v-model="refuge.cp" required placeholder="cp">
+		</div>
+		<div class="field">
+			<label>Ville</label>
+			<input type="text" v-model="refuge.ville" required placeholder="ville">
+		</div>
+		<div class="field">
+			<label>tel</label>
+			<input type="text" v-model="refuge.tel" required placeholder="tel">
+		</div>
+		<div class="field">
+			<label>Descriptif</label>
+			<textarea name="description" v-model="refuge.description" required placeholder="Descriptif"></textarea>
+		</div>
+		
+		
+		<v-btn color="primary" @click="addRefuge(refuge)">Valider</v-btn>
+		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
+	</v-form>
 </v-app>
+
 {{> inc/footer}}
 {{{vue}}}

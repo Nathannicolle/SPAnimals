@@ -2,11 +2,11 @@
 <v-app>
 	<h1>Vous êtes sur la page des refuges</h1>
 	<ul v-for="oneRefuge in refuges">
-		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %><a href="'refuge/' + oneRefuge.id">+ d'infos</a> <v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></li>
+		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary">+ d'infos</a> <v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></li>
 	</ul>
 	
 	
-
+	<h2>Ajouter un refuge</h2>
 	<v-form>
 		<div class="field">
 			<label>Nom</label>

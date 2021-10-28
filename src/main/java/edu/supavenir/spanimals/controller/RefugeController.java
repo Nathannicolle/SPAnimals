@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.supavenir.spanimals.model.Refuge;
+import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 import io.github.jeemv.springboot.vuejs.VueJS;
 import io.github.jeemv.springboot.vuejs.utilities.Http;
@@ -20,7 +21,10 @@ public class RefugeController {
 
 	@Autowired
 	private RefugeRepository refugeRepo;
-
+	
+	@Autowired
+	private JourRepository jourRepo;
+	
 	@ModelAttribute(name = "vue")
 	private VueJS getVue() {
 		return this.vue;
@@ -42,7 +46,7 @@ public class RefugeController {
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
-
+		vue.addData("jourSemaine", jourRepo.findAll());
 		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "console.log('ajouté')"), "refuge");
 		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
 

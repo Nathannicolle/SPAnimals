@@ -1,49 +1,49 @@
 {{> inc/header}}
 <v-app>
 	<h1>Vous êtes sur la page des refuges</h1>
-	<ul v-for="oneRefuge in refuges">
-		<li><% oneRefuge.nom %> - <% oneRefuge.localisation %> - <% oneRefuge.complementad %> - <% oneRefuge.cp %> - <% oneRefuge.ville %> - <% oneRefuge.tel %> - <% oneRefuge.description %><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary">+ d'infos</a> <v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></li>
-	</ul>
+	<table>
+		<tr v-for="oneRefuge in refuges"><td><% oneRefuge.nom %></td> <td><% oneRefuge.localisation %></td> <td><% oneRefuge.complementad %></td> <td><% oneRefuge.cp %></td> <td><% oneRefuge.ville %></td> <td><% oneRefuge.tel %></td> <td><% oneRefuge.description %></td><td v-for="jour in jourSemaine"><% jour.libelle %></td><td><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary"><i class="far fa-eye"></i></a></td> <td><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn></td><td><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></td></tr>
+	</table>
 	
 	
 	<h2>Ajouter un refuge</h2>
 	<v-form>
 		<div class="field">
 			<label>Nom</label>
-			<input type="text" v-model="refuge.nom" required="required" placeholder="Nom">
+			<input type="text" v-model="refuges.nom" required="required" placeholder="Nom">
 		</div>
 		<div class="field">
 			<label>Localisation</label>
-			<input type="text" v-model="refuge.localisation" required placeholder="Localisation">
+			<input type="text" v-model="refuges.localisation" required placeholder="Localisation">
 		</div>
 		<div class="field">
 			<label>NumeroEtRue</label>
-			<input type="text" v-model="refuge.numeroetrue" required placeholder="NumeroRue">
+			<input type="text" v-model="refuges.numeroetrue" required placeholder="NumeroRue">
 		</div>
 		<div class="field">
 			<label>ComplementAd</label>
-			<input type="text" v-model="refuge.complementad" required placeholder="ComplementAd">
+			<input type="text" v-model="refuges.complementad" required placeholder="ComplementAd">
 		</div>
 		<div class="field">
 			<label>Code Postal</label>
-			<input type="text" v-model="refuge.cp" required placeholder="cp">
+			<input type="text" v-model="refuges.cp" required placeholder="cp">
 		</div>
 		<div class="field">
 			<label>Ville</label>
-			<input type="text" v-model="refuge.ville" required placeholder="ville">
+			<input type="text" v-model="refuges.ville" required placeholder="ville">
 		</div>
 		<div class="field">
 			<label>tel</label>
-			<input type="text" v-model="refuge.tel" required placeholder="tel">
+			<input type="text" v-model="refuges.tel" required placeholder="tel">
 		</div>
 		<div class="field">
 			<label>Descriptif</label>
-			<textarea name="description" v-model="refuge.description" required placeholder="Descriptif"></textarea>
+			<textarea name="description" v-model="refuges.description" required placeholder="Descriptif"></textarea>
 		</div>
 		
 		
 		<v-btn color="primary" @click="addRefuge(refuge)">Valider</v-btn>
-		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
+		<!--<input class="ui primary button" type="submit" value="Valider">-->
 	</v-form>
 </v-app>
 

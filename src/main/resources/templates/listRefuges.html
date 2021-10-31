@@ -2,6 +2,9 @@
 <v-app>
 	<h1>Vous êtes sur la page des refuges</h1>
 	<table>
+		<thead style="text-align: left;">
+			<tr><th>Nom</th><th>Localisation</th><th>Complément d'adresse</th><th>Code postal</th><th>Ville</th><th>Téléphone</th><th>Description</th><th>Jours d'ouverture</th></tr>
+		</thead>
 		<tr v-for="oneRefuge in refuges"><td><% oneRefuge.nom %></td> <td><% oneRefuge.localisation %></td> <td><% oneRefuge.complementad %></td> <td><% oneRefuge.cp %></td> <td><% oneRefuge.ville %></td> <td><% oneRefuge.tel %></td> <td><% oneRefuge.description %></td><td v-for="jour in jourSemaine"><% jour.libelle %></td><td><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary"><i class="far fa-eye"></i></a></td> <td><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn></td><td><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></td></tr>
 	</table>
 	

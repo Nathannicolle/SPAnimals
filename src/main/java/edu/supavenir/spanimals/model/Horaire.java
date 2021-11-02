@@ -26,6 +26,7 @@ public class Horaire implements Serializable {
         Refuge refuge;
         Joursemaine joursemaine;
         Plage plage;
+        public HoraireId(){}
     }
 
     /** Primary key. */

@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="JOURSEMAINE")
 public class Joursemaine implements Serializable {
 
@@ -52,6 +54,8 @@ public class Joursemaine implements Serializable {
     private int id;
     @Column(name="LIBELLE", length=12)
     private String libelle;
+    
+    @JsonIgnore
     @OneToMany(mappedBy="joursemaine")
     private Set<Horaire> horaire;
 

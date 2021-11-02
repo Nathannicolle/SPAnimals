@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="PLAGE")
 public class Plage implements Serializable {
 
@@ -52,6 +54,8 @@ public class Plage implements Serializable {
     private int id;
     @Column(name="LIBELLE", length=10)
     private String libelle;
+    
+    @JsonIgnore
     @OneToMany(mappedBy="plage")
     private Set<Horaire> horaire;
 

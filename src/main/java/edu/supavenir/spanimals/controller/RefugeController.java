@@ -37,7 +37,9 @@ public class RefugeController {
 
 	@GetMapping("/refuge/{id}")
 	public String indexAction(@PathVariable Integer id) {
+		Refuge refuge = refugeRepo.getById(id);
 		vue.addData("refuge", refugeRepo.getById(id));
+		vue.addData("horaires", refuge.getHoraire());
 		return "refuge";
 	}
 

@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name="HORAIRE")
 @IdClass(Horaire.HoraireId.class)
 public class Horaire implements Serializable {
@@ -57,18 +59,27 @@ public class Horaire implements Serializable {
         lockFlag = aLockFlag;
     }
 
+    @JsonIgnore
     @Column(name="HDEBUT")
     private LocalTime hdebut;
+    
+    @JsonIgnore
     @Column(name="HFIN")
     private LocalTime hfin;
+    
+    @JsonIgnore
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDREFUGE", nullable=false)
     private Refuge refuge;
+    
+    @JsonIgnore
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDJOUR", nullable=false)
     private Joursemaine joursemaine;
+    
+    @JsonIgnore
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDPLAGE", nullable=false)

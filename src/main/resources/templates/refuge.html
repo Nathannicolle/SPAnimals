@@ -8,7 +8,12 @@
 		<li>Code Postal/Ville : <% refuge.cp %> <% refuge.ville %></li>
 		<li>Numéro de téléphone : <% refuge.tel %></li>
 		<li>Description : <% refuge.description %></li>
-		<li>Heures d'ouverture : <% horaires.hdebut %></li>
+		
+		<li>Heures d'ouverture : 
+			<ul v-for="horaire in refuge.horaire">
+				<li><% horaire.joursemaine.libelle %> : <% horaire.plage.libelle %> <% horaire.hdebut %> -> <% horaire.hfin %></li>
+			</ul>
+		</li>
 	</ul>
 </v-app>
 {{> inc/footer}}

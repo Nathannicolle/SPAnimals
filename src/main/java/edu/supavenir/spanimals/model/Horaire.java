@@ -60,16 +60,21 @@ public class Horaire implements Serializable {
 
     @Column(name="HDEBUT")
     private LocalTime hdebut;
+    
     @Column(name="HFIN")
     private LocalTime hfin;
-    @ManyToOne(optional=false)
+    
+    @ManyToOne(optional = false)
     @Id
-    @JoinColumn(name="IDREFUGE", nullable=false)
+    @JoinColumn(name = "IDREFUGE", nullable = false)
+    @JsonIgnore
     private Refuge refuge;
+    
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDJOUR", nullable=false)
     private Joursemaine joursemaine;
+    
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDPLAGE", nullable=false)

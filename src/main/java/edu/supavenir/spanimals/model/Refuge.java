@@ -15,8 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 @Entity(name = "REFUGE")
 public class Refuge implements Serializable {
 
@@ -68,12 +66,8 @@ public class Refuge implements Serializable {
 	private String tel;
 	@Column(name = "DESCRIPTION")
 	private String description;
-	
-	@JsonIgnore
 	@OneToMany(mappedBy = "refuge")
 	private Set<Horaire> horaire;
-	
-	@JsonIgnore
 	@OneToMany(mappedBy = "refuge")
 	private Set<Animal> animal;
 

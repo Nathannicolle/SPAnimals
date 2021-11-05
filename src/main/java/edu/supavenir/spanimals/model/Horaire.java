@@ -24,11 +24,10 @@ public class Horaire implements Serializable {
     /**
      * IdClass for primary key when using JPA annotations
      */
-    public class HoraireId implements Serializable {
+    public static class HoraireId implements Serializable {
         Refuge refuge;
         Joursemaine joursemaine;
         Plage plage;
-        public HoraireId(){}
     }
 
     /** Primary key. */
@@ -59,27 +58,18 @@ public class Horaire implements Serializable {
         lockFlag = aLockFlag;
     }
 
-    @JsonIgnore
     @Column(name="HDEBUT")
     private LocalTime hdebut;
-    
-    @JsonIgnore
     @Column(name="HFIN")
     private LocalTime hfin;
-    
-    @JsonIgnore
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDREFUGE", nullable=false)
     private Refuge refuge;
-    
-    @JsonIgnore
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDJOUR", nullable=false)
     private Joursemaine joursemaine;
-    
-    @JsonIgnore
     @ManyToOne(optional=false)
     @Id
     @JoinColumn(name="IDPLAGE", nullable=false)

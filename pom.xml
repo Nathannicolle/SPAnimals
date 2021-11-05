@@ -55,22 +55,15 @@
 		    <version>2.5.5</version>
 		</dependency>
 		<dependency>
-		    <groupId>io.github.jeemv.springboot.vuejs</groupId>
-		    <artifactId>springboot-vuejs</artifactId>
-		    <version>[1.0,)</version>
-		</dependency>		
+            <groupId>io.github.jeemv.springboot.vuejs</groupId>
+            <artifactId>springboot-vuejs</artifactId>
+            <version>1.0.19</version>
+        </dependency>		
 		<dependency>
     		<groupId>pl.allegro.tech.boot</groupId>
     		<artifactId>handlebars-spring-boot-starter</artifactId>
     		<version>0.3.3</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
-		<dependency>
-		    <groupId>com.fasterxml.jackson.datatype</groupId>
-		    <artifactId>jackson-datatype-jsr310</artifactId>
-		    <version>2.13.0</version>
-		</dependency>
-		
 	</dependencies>
 
 	<build>

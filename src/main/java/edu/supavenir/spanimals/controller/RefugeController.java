@@ -69,11 +69,11 @@ public class RefugeController {
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
 		vue.addData("refuge", new Refuge());
-		// vue.addData("jourSemaine", jourRepo.findAll());
-		// vue.addMethod("addRefuge", Http.post("'/rest/refuge/'",
-		// "console.log('ajouté')"), "refuge");
-		// vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id",
-		// "console.log('supprimé')"), "refuge");
+		 vue.addData("jourSemaine", jourRepo.findAll());
+		 vue.addMethod("addRefuge", Http.post("'/rest/refuge/'",
+		 "console.log('ajouté')"), "refuge");
+		 vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id",
+		 "console.log('supprimé')"), "refuge");
 
 		return "listRefuges";
 	}

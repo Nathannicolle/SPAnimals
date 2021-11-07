@@ -7,13 +7,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.supavenir.spanimals.model.Joursemaine;
+import edu.supavenir.spanimals.model.Race;
 import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.HoraireRepository;
 import edu.supavenir.spanimals.repositories.JourRepository;
+import edu.supavenir.spanimals.repositories.RaceRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 import io.github.jeemv.springboot.vuejs.VueJS;
 import io.github.jeemv.springboot.vuejs.utilities.Http;
@@ -33,6 +36,10 @@ public class RefugeController {
 	@Autowired
 	private HoraireRepository horaireRepo;
 
+	@Autowired
+	private RaceRepository raceRepo;
+
+	
 	@ModelAttribute(name = "vue")
 	private VueJS getVue() {
 		return this.vue;
@@ -64,6 +71,14 @@ public class RefugeController {
 		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('refuge ajouté')"), "refuge");
 		return "formRefuge";
 	}
+	
+	@GetMapping("/Race")
+	public String redirectToFormRace() {
+		vue.addData("race", new Race());
+		vue.addMethod("addRace", Http.post("'/Race/'", "race", "console.log('race ajouté')"), "race");
+		return "formRace";
+	}
+	
 
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.supavenir.spanimals.model.Joursemaine;
+import edu.supavenir.spanimals.model.Race;
 import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 
@@ -49,6 +50,7 @@ public class TestController {
 		jourRepo.saveAndFlush(jour);
 		return "jour ajouté :" + jour;
 	}
+	
 
 	@GetMapping("/modifier/{id}")
 	public String formModify(@PathVariable String id) {

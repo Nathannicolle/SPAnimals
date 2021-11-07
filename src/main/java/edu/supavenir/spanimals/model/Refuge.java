@@ -9,11 +9,14 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "REFUGE")
 public class Refuge implements Serializable {
@@ -66,8 +69,11 @@ public class Refuge implements Serializable {
 	private String tel;
 	@Column(name = "DESCRIPTION")
 	private String description;
-	@OneToMany(mappedBy = "refuge")
+
+	@OneToMany(mappedBy = "refuge", fetch = FetchType.EAGER)
 	private Set<Horaire> horaire;
+
+	@JsonIgnore
 	@OneToMany(mappedBy = "refuge")
 	private Set<Animal> animal;
 

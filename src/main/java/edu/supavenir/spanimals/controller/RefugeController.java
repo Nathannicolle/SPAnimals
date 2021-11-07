@@ -1,13 +1,16 @@
 package edu.supavenir.spanimals.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import edu.supavenir.spanimals.model.Joursemaine;
 import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.HoraireRepository;
 import edu.supavenir.spanimals.repositories.JourRepository;
@@ -23,13 +26,13 @@ public class RefugeController {
 
 	@Autowired
 	private RefugeRepository refugeRepo;
-	
+
 	@Autowired
 	private JourRepository jourRepo;
-	
+
 	@Autowired
 	private HoraireRepository horaireRepo;
-	
+
 	@ModelAttribute(name = "vue")
 	private VueJS getVue() {
 		return this.vue;
@@ -43,6 +46,18 @@ public class RefugeController {
 		return "refuge";
 	}
 
+	@GetMapping("all")
+	public String all() {
+		vue.addData("refuges", refugeRepo.findAll());
+		return "all";
+	}
+
+	@GetMapping("j")
+	public @ResponseBody List<Joursemaine> allJ() {
+		List<Joursemaine> refuges = jourRepo.findAll();
+		return refuges;
+	}
+
 	@GetMapping("/refuge")
 	public String redirectToForm() {
 		vue.addData("refuge", new Refuge());
@@ -53,9 +68,12 @@ public class RefugeController {
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
-		vue.addData("jourSemaine", jourRepo.findAll());
-		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "console.log('ajouté')"), "refuge");
-		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
+		vue.addData("refuge", new Refuge());
+		// vue.addData("jourSemaine", jourRepo.findAll());
+		// vue.addMethod("addRefuge", Http.post("'/rest/refuge/'",
+		// "console.log('ajouté')"), "refuge");
+		// vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id",
+		// "console.log('supprimé')"), "refuge");
 
 		return "listRefuges";
 	}

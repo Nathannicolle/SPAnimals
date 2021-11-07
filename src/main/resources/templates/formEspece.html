@@ -1,0 +1,16 @@
+{{> inc/header}}
+<v-app>
+	<v-form >
+		<div class="field">
+			<label>Frais</label>
+			<input type="float"  required="required" placeholder="Frais">
+			<label>Espece</label>
+			<input type="text"  required="required" placeholder="Espece">
+		</div>
+		
+		<v-btn color="primary" @click="addEspece(espece)">Valider</v-btn>
+		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
+	</v-form >
+</v-app>
+ {{> inc/footer}}
+{{{vue}}}

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import edu.supavenir.spanimals.model.Espece;
 import edu.supavenir.spanimals.model.Joursemaine;
 import edu.supavenir.spanimals.model.Race;
 import edu.supavenir.spanimals.model.Refuge;
@@ -29,6 +30,9 @@ public class RefugeController {
 
 	@Autowired
 	private RefugeRepository refugeRepo;
+	
+	@Autowired
+	private RefugeRepository especeRepo;
 
 	@Autowired
 	private JourRepository jourRepo;
@@ -72,11 +76,19 @@ public class RefugeController {
 		return "formRefuge";
 	}
 	
-	@GetMapping("/Race")
+	@GetMapping("/formRace")
 	public String redirectToFormRace() {
-		vue.addData("race", new Race());
-		vue.addMethod("addRace", Http.post("'/Race/'", "race", "console.log('race ajouté')"), "race");
+		vue.addData("race", raceRepo.findAll());
+		vue.addData("Race", new Race());
+		vue.addMethod("addRace", Http.post("'/rest/Race/'", "race", "console.log('race ajouté')"), "race");
 		return "formRace";
+	}
+	
+	@GetMapping("/formEspece")
+	public String redirectToFormEspece() {
+			vue.addData("espece", new Espece());
+			vue.addMethod("addEspece", Http.post("'/rest/espece/'", "espece", "console.log('espece ajouté')"), "espece");
+			return "formEspece";
 	}
 	
 

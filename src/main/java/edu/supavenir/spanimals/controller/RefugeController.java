@@ -87,7 +87,7 @@ public class RefugeController {
 	@GetMapping("/formEspece")
 	public String redirectToFormEspece() {
 			vue.addData("espece", new Espece());
-			vue.addMethod("addEspece", Http.post("'/rest/espece/'", "espece", "console.log('espece ajouté')"), "espece");
+			vue.addMethod("addEspece", Http.post("'/rest/Espece/'", "espece", "console.log('espece ajouté')"), "espece");
 			return "formEspece";
 	}
 	

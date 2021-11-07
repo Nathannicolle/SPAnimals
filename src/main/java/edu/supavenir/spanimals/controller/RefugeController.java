@@ -76,20 +76,6 @@ public class RefugeController {
 		return "formRefuge";
 	}
 	
-	@GetMapping("/formRace")
-	public String redirectToFormRace() {
-		vue.addData("race", raceRepo.findAll());
-		vue.addData("Race", new Race());
-		vue.addMethod("addRace", Http.post("'/rest/Race/'", "race", "console.log('race ajouté')"), "race");
-		return "formRace";
-	}
-	
-	@GetMapping("/formEspece")
-	public String redirectToFormEspece() {
-			vue.addData("espece", new Espece());
-			vue.addMethod("addEspece", Http.post("'/rest/espece/'", "espece", "console.log('espece ajouté')"), "espece");
-			return "formEspece";
-	}
 	
 
 	@GetMapping("/listRefuges")
@@ -97,6 +83,7 @@ public class RefugeController {
 		vue.addData("refuges", refugeRepo.findAll());
 		vue.addData("refuge", new Refuge());
 		 vue.addData("jourSemaine", jourRepo.findAll());
+		 vue.addData("formEspece", especeRepo.findAll());
 		 vue.addMethod("addRefuge", Http.post("'/rest/refuge/'",
 		 "console.log('ajouté')"), "refuge");
 		 vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id",

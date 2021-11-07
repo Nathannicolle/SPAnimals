@@ -1,3 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
 body {
-	font-family: sans-serif;
+	font-family: 'Exo 2', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+.logo {
+	width: 200px;
+	height: 200px;
+	transition: 0.5s ease-in-out;
+}
+
+.logo:hover {
+	transform: scale(0.8);
+}
+
+header {
+	display: flex;
+	width:100%;
+	background-color: #adb5bd;
+}
+
+.menu {
+	width: calc(100% - 200px);
+}
+
+.menu ul {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 200px;
+}
+
+.menu li {
+	list-style-type: none;
+}
+
+.menu li a {
+	display: block;
+	margin: 2%;
+	text-decoration: none;
+	color: black;
+	font-size: 1.4em;
+	transition: 0.2s;
+}
+
+.menu li a:hover {
+	color: #f19820;
+}
+
+.menu .login {
+	margin-left: calc(100% - 330px);
+}
+
+.banner_acc {
+	background: linear-gradient(to left, transparent, #f19820), url("https://nathannicolle.fr/logo/REFUGES_DE_FRANCE_V2.png");
+	background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+	height: 70vh;
+	width:100%;
+}
+
+.banner_acc h1 {
+	text-align: center;
 }

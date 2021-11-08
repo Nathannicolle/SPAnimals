@@ -3,11 +3,13 @@ package edu.supavenir.spanimals.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.supavenir.spanimals.model.Joursemaine;
+import edu.supavenir.spanimals.repositories.AnimalRepository;
 import edu.supavenir.spanimals.repositories.EspeceRepository;
 import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
@@ -18,6 +20,9 @@ import io.github.jeemv.springboot.vuejs.utilities.Http;
 public class TestController {
 	@Autowired
 	private VueJS vue;
+	
+	@Autowired
+	private AnimalRepository animalRepo;
 
 	@Autowired
 	private RefugeRepository refugeRepo;
@@ -28,9 +33,15 @@ public class TestController {
 	@Autowired
 	private EspeceRepository especeRepo;
 
+	@ModelAttribute(name = "vue")
+	private VueJS getVue() {
+		return this.vue;
+	}
+	
 	@GetMapping("/")
 	public String redirectToIndex() {
 		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('refuge ajouté')"), "refuge");
+		vue.addData("animals", animalRepo.findAll());
 		return "index";
 	}
 

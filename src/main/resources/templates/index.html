@@ -7,8 +7,8 @@
 			<h2>Découvrez nos refuges et nos animaux</h2>
 			<p class="banner_caption">Retrouvez nos refuges et nos animaux  disponibles à l'adoption. Les espèces sont variées et peuvent aller des chiens, chats aux ânes, chèvres, NAC et bien d'autres ! Découvrez-les dès maintenant et trouvez peut-être votre futur compagnon !</p>
 			<div class="btns_acc">
-				<a href="/infosRefuge/listRefuges" class="v-btn  v-btn--outlined theme--light v-size--x-large accent--text">Nos refuges</a>
-				<a href="/animals/listAnimal" class="v-btn--has-bg v-btn theme--dark v-size--x-large accent--text">Nos animaux</a>
+				<a href="/infosRefuge/listRefuges" class="v-btn  v-btn--outlined theme--light v-size--x-large">Nos refuges</a>
+				<a href="/animals/listAnimal" class="v-btn--has-bg v-btn theme--dark v-size--x-large">Nos animaux</a>
 			</div>
 			
 		</div>
@@ -16,10 +16,17 @@
 	<div class="animals_container">
 		<v-form class="search_form">
 			<input type="text" placeholder="Rechercher un animal">
-			<a href="/animals/listAnimal" class="btn_search">Rechercher</a>
-			<!-- <v-btn color="primary" @click="addRefuge(refuge)">Rechercher</v-btn> --> <!-- (v-btn) Bouton non fonctionnel et non stylisé --> 
+			<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search">Rechercher</v-btn> 
 		</v-form>
 		<h2>Nos animaux</h2>
+		<div class="animals">
+			<div class="card_animal"  v-for="animal in animals">
+				<img src="/img/husky.jpg"/>
+				<h2><% animal.nom %></h2>
+				<p><% animal.description %></p>
+				<a href="#" class="link_animal">Voir la fiche de l'animal</a>
+			</div>
+		</div>
 	</div>
 	<!-- <a href="/infosRefuge/refuge"><i class="plus icon"></i>Ajouter un Refuge</a>
 	<a href="/jour">Ajouter un jour d'ouverture</a>

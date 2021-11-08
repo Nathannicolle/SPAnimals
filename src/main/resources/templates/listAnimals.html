@@ -1,8 +1,13 @@
 {{> inc/header}}
 <v-app>
-	<div class="card_animal" v-for="animal in animals">
-		<h2><% animal.nom %></h2>
-		<p><% animal.description %></p>
+	<h1 class="title_pages">Nos animaux</h1>
+	<div class="animals">
+		<div class="card_animal"  v-for="animal in animals">
+			<img src="/img/husky.jpg"/>
+			<h2><% animal.nom %></h2>
+			<p><% animal.description %></p>
+			<a href="#" class="link_animal">Voir la fiche de l'animal</a>
+		</div>
 	</div>
 </v-app>
 {{> inc/footer}}

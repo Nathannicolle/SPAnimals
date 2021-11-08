@@ -98,18 +98,21 @@ header {
 
 .btns_acc {
 	margin-top: 2%;
+	color: black !important;
 }
 
 /* contenu acc */
 .animals_container {
 	min-height: 40vh;
+	padding-bottom: 5%;
 }
 
 /* Recherche */
 .search_form {
 	display: flex;
 	flex-direction: column;
-	transform: translateY(-40%);
+	transform: translateY(-35%);
+	border: none;
 }
 
 .search_form input[type=text] {
@@ -127,13 +130,15 @@ header {
 	outline: none;
 }
 
-.search_form v-btn {
+.search_form .btn_search {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1%;
+	width: 30% !important;
+	height: 50px !important;
 }
 
-.btn_search {
+/* .btn_search {
 	background-color: #3083dc;
 	color: white;
 	width: 30%;
@@ -146,10 +151,11 @@ header {
 	border-radius: 15px;
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 	transition: 0.5s ease-in-out;
-}
+} */
 
 .btn_search:hover {
 	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 5px 11px -1px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+	background-color: #1e64ae;
 }
 
 /* Animaux accueil */
@@ -207,6 +213,45 @@ header {
 .refugeName {
 	text-align: center;
 	font-size: 1.3em;
+}
+
+/* Page listAnimals */
+.animals {
+	display: flex;
+	flex-direction: row;
+	margin-top: 2%;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card_animal {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card_animal img {
+	width: 100%;
+}
+
+.link_animal {
+	text-decoration: none;
+	background-color: #f19820;
+	color: black !important;
+	padding: 2%;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	margin-bottom: 5%;
+	transition: 0.5s ease-in-out;
+}
+
+.link_animal:hover {
+	background-color: #d8800e;
 }
 
 /*formulaire*/

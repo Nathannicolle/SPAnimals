@@ -1,0 +1,69 @@
+{{> inc/header}}
+<v-app>
+	<v-form class="form_add">
+		<div class="field">
+			<label>Adopté</label>
+			<input type="text" v-model="animal.adopte" required="required" placeholder="Nom">
+		</div>
+		<div class="field">
+			<label>couleur</label>
+			<input type="text" v-model="animal.couleur" required placeholder="couleur">
+		</div>
+		<div class="field">
+			<label>Description</label>
+			<input type="text" v-model="animal.description" required placeholder="description">
+		</div>
+		<div class="field">
+			<label>Date de Naissance</label>
+			<input type="date" v-model="animal.dateNaiss" required >
+		</div>
+		<div class="field">
+			<label>Frais</label>
+			<input type="float" v-model="animal.frais" required placeholder="Frais">
+		</div>
+		<div class="field">
+			<label>Nom</label>
+			<input type="text" v-model="animal.nom" required placeholder="nom">
+		</div>
+		<div class="field">
+			<label>SOS</label>
+			<input type="boolean" v-model="animal.nom" required placeholder="nom">
+		</div>
+		
+		<input type="radio"  name="sos" value="HTML">
+			<label>SOS</LABEL>
+			  <label for="html">Oui</label><br>
+			  <input type="radio" id="css" name="SOS" value="1">
+			  <label for="css">Non</label><br>
+			   <input type="radio" id="css" name="SOS" value="2">
+		
+		
+		  <input type="radio"  name="sexe" value="HTML">
+			  <label for="html">Masculin</label><br>
+			  <input type="radio" id="css" name="sexe" value="CSS">
+			  <label for="css">Feminin</label><br>
+			   <input type="radio" id="css" name="sexe" value="CSS">
+			  
+			   <label for="espece">espece</label>
+				  <select name="idespece"  required>
+				    <option value="berger Allemand">Chien</option>
+				    <option value="staffy">chat</option>
+				  </select>
+		
+		 <label for="race">Race</label>
+			  <select name="idrace"  required>
+			    <option value="berger Allemand">Berger allemand</option>
+			    <option value="staffy">Staffy</option>
+			  </select>
+			  
+		<label for="refuge">Refuge</label>
+			  <select name="idrefuge"  required>
+			    <option value="1">SPA</option>
+			  </select>
+			  
+		<v-btn color="primary" @click="addAnimal(aniaml)">Valider</v-btn>
+		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
+	</v-form>
+</v-app>
+ {{> inc/footer}}
+{{{vue}}}

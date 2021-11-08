@@ -11,9 +11,14 @@ import edu.supavenir.spanimals.model.Joursemaine;
 import edu.supavenir.spanimals.repositories.EspeceRepository;
 import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
+import io.github.jeemv.springboot.vuejs.VueJS;
+import io.github.jeemv.springboot.vuejs.utilities.Http;
 
 @Controller
 public class TestController {
+	@Autowired
+	private VueJS vue;
+
 	@Autowired
 	private RefugeRepository refugeRepo;
 
@@ -25,6 +30,7 @@ public class TestController {
 
 	@GetMapping("/")
 	public String redirectToIndex() {
+		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('refuge ajouté')"), "refuge");
 		return "index";
 	}
 

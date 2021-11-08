@@ -17,7 +17,7 @@ import io.github.jeemv.springboot.vuejs.VueJS;
 import io.github.jeemv.springboot.vuejs.utilities.Http;
 
 @Controller
-public class TestController {
+public class GeneralControlleur {
 	@Autowired
 	private VueJS vue;
 	

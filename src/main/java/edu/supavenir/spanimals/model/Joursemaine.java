@@ -54,6 +54,8 @@ public class Joursemaine implements Serializable {
     private int id;
     @Column(name="LIBELLE", length=12)
     private String libelle;
+    
+    @JsonIgnore
     @OneToMany(mappedBy="joursemaine")
     private Set<Horaire> horaire;
 

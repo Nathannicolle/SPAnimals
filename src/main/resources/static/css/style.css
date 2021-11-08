@@ -1,3 +1,4 @@
+/* Définitions générales */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 body {
 	font-family: 'Poppins', sans-serif;
@@ -5,6 +6,8 @@ body {
 	padding: 0;
 }
 
+
+/* En-tête/Menu/Logo */
 .logo {
 	width: 200px;
 	height: 200px;
@@ -53,6 +56,8 @@ header {
 	margin-left: calc(100% - 350px);
 }
 
+
+/* Bannière accueil */
 .banner_acc {
 	padding-top: 2%;
 	background: linear-gradient(to left, transparent, #f19820), url("/img/REFUGES_DE_FRANCE_V2.png");
@@ -75,6 +80,10 @@ header {
 .banner_caption {
 	margin-top: 1%;
 	width:40%;
+}
+
+.btns_acc {
+	margin-top: 2%;
 }
 
 /*formulaire*/

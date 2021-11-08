@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import edu.supavenir.spanimals.model.Espece;
-import edu.supavenir.spanimals.model.Race;
+import edu.supavenir.spanimals.model.Animal;
 import edu.supavenir.spanimals.repositories.AnimalRepository;
 import edu.supavenir.spanimals.repositories.RaceRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
@@ -25,6 +24,8 @@ public class AnimalControlleur {
 	@Autowired
 	private AnimalRepository animalRepo;
 	@Autowired
+	private RefugeRepository refugeRepo;
+	@Autowired
 	private RefugeRepository especeRepo;
 
 	@ModelAttribute(name = "vue")
@@ -38,25 +39,26 @@ public class AnimalControlleur {
 		return "listAnimals";
 	}
 
-	@GetMapping("/formRace")
-	public String redirectToFormRace() {
-		vue.addData("race", raceRepo.findAll());
-		vue.addData("Race", new Race());
-		vue.addMethod("addRace", Http.post("'/rest/Race/'", "race", "console.log('race ajouté')"), "race");
-		return "formRace";
-	}
-
-	@GetMapping("/formEspece")
-	public String redirectToFormEspece() {
-		vue.addData("race", especeRepo.findAll());
-		vue.addData("espece", new Espece());
-		vue.addMethod("addEspece", Http.post("'/rest/Espece/'", "espece", "console.log('espece ajouté')"), "espece");
-		return "formEspece";
-	}
+	/*
+	 * @GetMapping("/formRace") public String redirectToFormRace() {
+	 * vue.addData("race", raceRepo.findAll()); vue.addData("Race", new Race());
+	 * vue.addMethod("addRace", Http.post("'/rest/Race/'", "race",
+	 * "console.log('race ajouté')"), "race"); return "formRace"; }
+	 * 
+	 * @GetMapping("/formEspece") public String redirectToFormEspece() {
+	 * vue.addData("race", especeRepo.findAll()); vue.addData("espece", new
+	 * Espece()); vue.addMethod("addEspece", Http.post("'/rest/Espece/'", "espece",
+	 * "console.log('espece ajouté')"), "espece"); return "formEspece"; }
+	 */
 
 	@GetMapping("/formAnimal")
 	public String getAddAnimal() {
 
+		vue.addData("animal", new Animal());
+		vue.addData("refuges", refugeRepo.findAll());
+		vue.addData("races", raceRepo.findAll());
+		vue.addData("espece", especeRepo.findAll());
+		vue.addMethod("addAnimal", Http.post("'/rest/animal/'", "animal", "console.log('animal ajouté')"), "animal");
 		return "formAnimal";
 	}
 

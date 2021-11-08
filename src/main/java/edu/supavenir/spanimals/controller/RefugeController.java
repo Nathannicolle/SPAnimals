@@ -88,7 +88,6 @@ public class RefugeController {
 
 	@GetMapping("/admin")
 	public String showAdmin() {
-
 		return "admin";
 	}
 

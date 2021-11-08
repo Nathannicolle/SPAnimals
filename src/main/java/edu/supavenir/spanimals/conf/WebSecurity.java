@@ -21,7 +21,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 				// method
 				// request
 				// based on role.
-				.antMatchers("/**", "refuge/**", "/animal/**", "/missions", "/contact").permitAll() // permited
+				.antMatchers("/**", "refuge/**", "/animals/**", "/missions", "/contact").permitAll() // permited
 				// urls to
 				// guest //
 				// users(without

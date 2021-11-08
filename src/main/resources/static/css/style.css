@@ -42,11 +42,15 @@ header {
 
 .menu li a {
 	display: block;
-	margin: 2%;
 	text-decoration: none;
 	color: black;
 	font-size: 1.4em;
 	transition: 0.2s;
+	width: 100%;
+}
+
+.menu li a:first-child {
+	margin-right: 70px !important;
 }
 
 .menu li a:hover {
@@ -54,7 +58,7 @@ header {
 }
 
 .menu .login {
-	margin-left: calc(100% - 350px);
+	margin-left: calc(100% - 420px);
 }
 
 
@@ -92,6 +96,38 @@ header {
 	height: 40vh;
 }
 
+/* Recherche */
+.search_form {
+	display: flex;
+	flex-direction: column;
+	transform: translateY(-45%);
+}
+
+.search_form input[type=text] {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	width: 50% !important;
+	border-radius: 10px;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	transition: 0.5s ease-in-out;
+}
+
+.search_form input[type=text]:focus {
+	border: 3px solid #3083dc;
+	outline: none;
+}
+
+.search_form v-btn {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 1%;
+}
+
+/* Animaux accueil */
+.animals_container h2 {
+	text-align: center;
+}
 
 /*formulaire*/
 

@@ -1,16 +1,16 @@
 {{> inc/header}}
 <v-app>
-	<v-form >
+	<v-form action="formEspece" method="POST"  >
 		<div class="field">
 			<label>Frais</label>
-			<input type="float"  required="required" placeholder="Frais">
+			<input type="float" v-model="espece.frais" required="required" placeholder="Frais">
 			<label>Espece</label>
-			<input type="text"  required="required" placeholder="Espece">
+			<input type="text" v-model="espece.libelle" required="required" placeholder="Espece">
 		</div>
 		
 		<v-btn color="primary" @click="addEspece(espece)">Valider</v-btn>
 		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
-	</v-form >
+	</v-form  >
 </v-app>
  {{> inc/footer}}
 {{{vue}}}

@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import edu.supavenir.spanimals.model.Espece;
 import edu.supavenir.spanimals.model.Joursemaine;
-import edu.supavenir.spanimals.model.Race;
 import edu.supavenir.spanimals.repositories.EspeceRepository;
 import edu.supavenir.spanimals.repositories.JourRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
@@ -21,10 +19,9 @@ public class TestController {
 
 	@Autowired
 	private JourRepository jourRepo;
-	
+
 	@Autowired
 	private EspeceRepository especeRepo;
-
 
 	@GetMapping("/")
 	public String redirectToIndex() {
@@ -56,15 +53,13 @@ public class TestController {
 		jourRepo.saveAndFlush(jour);
 		return "jour ajouté :" + jour;
 	}
-	
-	@PostMapping("/formEspece")
-	public @ResponseBody String addEspece(Espece espece) {
-		Espece libelle = new Espece();
-		especeRepo.saveAndFlush(espece);
-		return "espece ajouté :" + espece;
-	}
-	
 
+	/*
+	 * @PostMapping("/formEspece") public @ResponseBody String addEspece(Espece
+	 * espece) { Espece libelle = new Espece(); especeRepo.saveAndFlush(espece);
+	 * return "espece ajouté :" + espece; }
+	 * 
+	 */
 	@GetMapping("/modifier/{id}")
 	public String formModify(@PathVariable String id) {
 		return "formRefuge";

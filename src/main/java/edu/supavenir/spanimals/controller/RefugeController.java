@@ -7,13 +7,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import edu.supavenir.spanimals.model.Espece;
 import edu.supavenir.spanimals.model.Joursemaine;
-import edu.supavenir.spanimals.model.Race;
 import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.HoraireRepository;
 import edu.supavenir.spanimals.repositories.JourRepository;
@@ -30,7 +27,7 @@ public class RefugeController {
 
 	@Autowired
 	private RefugeRepository refugeRepo;
-	
+
 	@Autowired
 	private RefugeRepository especeRepo;
 
@@ -43,7 +40,6 @@ public class RefugeController {
 	@Autowired
 	private RaceRepository raceRepo;
 
-	
 	@ModelAttribute(name = "vue")
 	private VueJS getVue() {
 		return this.vue;
@@ -75,36 +71,29 @@ public class RefugeController {
 		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "refuge", "console.log('refuge ajouté')"), "refuge");
 		return "formRefuge";
 	}
-	
-<<<<<<< HEAD
-=======
-	@GetMapping("/formRace")
-	public String redirectToFormRace() {
-		vue.addData("race", raceRepo.findAll());
-		vue.addData("Race", new Race());
-		vue.addMethod("addRace", Http.post("'/rest/Race/'", "race", "console.log('race ajouté')"), "race");
-		return "formRace";
-	}
-	
-	@GetMapping("/formEspece")
-	public String redirectToFormEspece() {
-			vue.addData("espece", new Espece());
-			vue.addMethod("addEspece", Http.post("'/rest/Espece/'", "espece", "console.log('espece ajouté')"), "espece");
-			return "formEspece";
-	}
->>>>>>> 32424d771fbf7723a935873d337a84485ae0748c
-	
+
+	/*
+	 * @GetMapping("/formRace") public String redirectToFormRace() {
+	 * vue.addData("race", raceRepo.findAll()); vue.addData("Race", new Race());
+	 * vue.addMethod("addRace", Http.post("'/rest/Race/'", "race",
+	 * "console.log('race ajouté')"), "race"); return "formRace"; }
+	 */
+
+	/*
+	 * @GetMapping("/formEspece") public String redirectToFormEspece() {
+	 * vue.addData("espece", new Espece()); vue.addMethod("addEspece",
+	 * Http.post("'/rest/Espece/'", "espece", "console.log('espece ajouté')"),
+	 * "espece"); return "formEspece"; }
+	 */
 
 	@GetMapping("/listRefuges")
 	public String showAllRefuge() {
 		vue.addData("refuges", refugeRepo.findAll());
 		vue.addData("refuge", new Refuge());
-		 vue.addData("jourSemaine", jourRepo.findAll());
-		 vue.addData("formEspece", especeRepo.findAll());
-		 vue.addMethod("addRefuge", Http.post("'/rest/refuge/'",
-		 "console.log('ajouté')"), "refuge");
-		 vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id",
-		 "console.log('supprimé')"), "refuge");
+		vue.addData("jourSemaine", jourRepo.findAll());
+		vue.addData("formEspece", especeRepo.findAll());
+		vue.addMethod("addRefuge", Http.post("'/rest/refuge/'", "console.log('ajouté')"), "refuge");
+		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
 
 		return "listRefuges";
 	}

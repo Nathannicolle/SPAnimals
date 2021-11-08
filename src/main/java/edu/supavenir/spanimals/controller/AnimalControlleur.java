@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.supavenir.spanimals.model.Animal;
 import edu.supavenir.spanimals.repositories.AnimalRepository;
+import edu.supavenir.spanimals.repositories.EspeceRepository;
 import edu.supavenir.spanimals.repositories.RaceRepository;
 import edu.supavenir.spanimals.repositories.RefugeRepository;
 import io.github.jeemv.springboot.vuejs.VueJS;
@@ -26,7 +27,7 @@ public class AnimalControlleur {
 	@Autowired
 	private RefugeRepository refugeRepo;
 	@Autowired
-	private RefugeRepository especeRepo;
+	private EspeceRepository especeRepo;
 
 	@ModelAttribute(name = "vue")
 	private VueJS getVue() {
@@ -57,7 +58,7 @@ public class AnimalControlleur {
 		vue.addData("animal", new Animal());
 		vue.addData("refuges", refugeRepo.findAll());
 		vue.addData("races", raceRepo.findAll());
-		vue.addData("espece", especeRepo.findAll());
+		vue.addData("especes", especeRepo.findAll());
 		vue.addMethod("addAnimal", Http.post("'/rest/animal/'", "animal", "console.log('animal ajouté')"), "animal");
 		return "formAnimal";
 	}

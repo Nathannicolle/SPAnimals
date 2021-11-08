@@ -1,20 +1,27 @@
 {{> inc/header}}
 <v-app>
-	<h1>Bienvenue sur la page du refuge : <% refuge.nom %></h1>
-	<ul>
-		<li>Localisation : <% refuge.localisation %></li>
-		<li>Rue : <% refuge.numeroetrue %></li>
-		<li>Complément d'adresse : <% refuge.complementad %></li>
-		<li>Code Postal/Ville : <% refuge.cp %> <% refuge.ville %></li>
-		<li>Numéro de téléphone : <% refuge.tel %></li>
-		<li>Description : <% refuge.description %></li>
-		
-		<li>Heures d'ouverture : 
-			<ul v-for="horaire in refuge.horaire">
-				<li><% horaire.joursemaine.libelle %> : <% horaire.plage.libelle %> <% horaire.hdebut %> -> <% horaire.hfin %></li>
-			</ul>
-		</li>
-	</ul>
+	<h1 class="title_pages">Bienvenue sur la page du refuge : <% refuge.nom %></h1>
+	
+	<div class="card_refuge">
+		<div class="icon">
+			<i class="fas fa-home"></i>
+		</div>
+		<ul class="mainListRefuge">
+			<li class="refugeName"><b><% refuge.nom %></b></li>
+			<li><b>Localisation :</b> <% refuge.localisation %></li>
+			<li><b>Rue :</b> <% refuge.numeroetrue %></li>
+			<li><b>Complément d'adresse :</b> <% refuge.complementad %></li>
+			<li><b>Code Postal/Ville :</b> <% refuge.cp %> <% refuge.ville %></li>
+			<li><b>Numéro de téléphone :</b> <% refuge.tel %></li>
+			<li><b>Description :</b> <% refuge.description %></li>
+			
+			<li><b>Horaires d'ouverture :</b> 
+				<ul v-for="horaire in refuge.horaire">
+					<li><% horaire.joursemaine.libelle %> - <% horaire.plage.libelle %> : <% horaire.hdebut %> => <% horaire.hfin %></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
 </v-app>
 {{> inc/footer}}
 {{{vue}}}

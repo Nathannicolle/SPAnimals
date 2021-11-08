@@ -7,6 +7,14 @@ body {
 	background-color: #f5f5f5;
 }
 
+h1 {
+	text-align: center;
+}
+
+.title_pages {
+	margin-top: 1%;
+}
+
 
 /* En-tête/Menu/Logo */
 .logo {
@@ -94,14 +102,14 @@ header {
 
 /* contenu acc */
 .animals_container {
-	height: 40vh;
+	min-height: 40vh;
 }
 
 /* Recherche */
 .search_form {
 	display: flex;
 	flex-direction: column;
-	transform: translateY(-45%);
+	transform: translateY(-40%);
 }
 
 .search_form input[type=text] {
@@ -125,9 +133,80 @@ header {
 	margin-top: 1%;
 }
 
+.btn_search {
+	background-color: #3083dc;
+	color: white;
+	width: 30%;
+	text-align:center;
+	text-decoration:none;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	border-radius: 15px;
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+	transition: 0.5s ease-in-out;
+}
+
+.btn_search:hover {
+	box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 2px, rgba(0, 0, 0, 0.3) 0px 5px 11px -1px, rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+}
+
 /* Animaux accueil */
 .animals_container h2 {
 	text-align: center;
+}
+
+/* Page de refuge */
+.card_refuge {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	border-radius: 15px;
+	width: 50%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 5%;
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+}
+
+.card_refuge li {
+	list-style-type: none;
+	margin-left: -4%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+
+.card_refuge .icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+    height: 120px;
+    border: 2px solid gray;
+    padding: 2%;
+    border-radius: 360px;
+    transform: translateY(-50%);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: white;
+}
+
+.card_refuge .icon i {
+	font-size: 1.6em !important;
+	color: #f19820 !important;
+}
+
+.card_refuge .mainListRefuge {
+	margin-top: -5%;
+	margin-bottom: 5%;
+	font-size: 1.2em;
+}
+
+.refugeName {
+	text-align: center;
+	font-size: 1.3em;
 }
 
 /*formulaire*/

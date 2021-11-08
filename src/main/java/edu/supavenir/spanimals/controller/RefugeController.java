@@ -2,11 +2,13 @@ package edu.supavenir.spanimals.controller;
 
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -96,5 +98,20 @@ public class RefugeController {
 		vue.addMethod("deleteRefuge", Http.delete("'/rest/refuge/'+refuge.id", "console.log('supprimé')"), "refuge");
 
 		return "listRefuges";
+	}
+
+	@GetMapping("/admin")
+	public String showAdmin() {
+
+		return "admin";
+	}
+
+	@PostMapping("connecter")
+	private @ResponseBody String addLogin(User user) {
+		if (user.getName() == "user" && user.getPassword() == "user") {
+			return "success";
+		} else {
+			return "marche pas";
+		}
 	}
 }

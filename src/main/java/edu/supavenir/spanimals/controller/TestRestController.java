@@ -31,4 +31,5 @@ public class TestRestController {
 		attrs.addFlashAttribute("msgDelete", ("Vous avez bien supprimé l'élément <b>" + id + "</b>"));
 		return new RedirectView("/");
 	}
+
 }

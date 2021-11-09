@@ -81,5 +81,10 @@ public class GeneralControlleur {
 	public String formModify(@PathVariable String id) {
 		return "formRefuge";
 	}
+	
+	@GetMapping("/mentions")
+	public String getMentionsLegales() {
+		return "mentionsLegales";
+	}
 
 }

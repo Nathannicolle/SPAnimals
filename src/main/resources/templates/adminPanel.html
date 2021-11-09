@@ -17,8 +17,8 @@
 	<aside class="dashboard_menu">
 		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
 		<ul>
-			<li><a href="#">Animaux</a></li>
-			<li><a href="#">Refuges</a></li>
+			<li><a href="/animals/listAnimal">Animaux</a></li>
+			<li><a href="/infosRefuge/listRefuges">Refuges</a></li>
 		</ul>
 	</aside>
 	<v-app class="dashboard_content">
@@ -33,6 +33,23 @@
 			<v-card elevation="2">
 				<v-card-title>Voir les refuges</v-card-title>
 				<v-card-text>Vous souhaitez voir les informations des refuges ?</v-card-text>
+				<a href="/infosRefuge/listRefuges" class="v-btn v-btn--has-bg theme--light v-size--default primary">Voir</a>
+			</v-card>
+			<v-card elevation="2">
+				<v-card-title>Voir les animaux</v-card-title>
+				<v-card-text>Vous souhaitez voir les informations des animaux ?</v-card-text>
+				<a href="/animals/listAnimal" class="v-btn v-btn--has-bg theme--light v-size--default primary">Voir</a>
+			</v-card>
+			
+			<v-card elevation="2">
+				<v-card-title>Voir les espèces d'animaux</v-card-title>
+				<v-card-text>Vous souhaitez voir les informations des espèces d'animaux ?</v-card-text>
+				<a href="/animals/formAnimal" class="v-btn v-btn--has-bg theme--light v-size--default primary">Voir</a>
+			</v-card>
+			
+			<v-card elevation="2">
+				<v-card-title>Voir les races d'animaux</v-card-title>
+				<v-card-text>Vous souhaitez voir les informations des races d'animaux ?</v-card-text>
 				<a href="/animals/formAnimal" class="v-btn v-btn--has-bg theme--light v-size--default primary">Voir</a>
 			</v-card>
 		</div>

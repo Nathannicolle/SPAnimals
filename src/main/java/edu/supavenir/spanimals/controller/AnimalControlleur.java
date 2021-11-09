@@ -49,6 +49,7 @@ public class AnimalControlleur {
 		Animal animal = animalRepo.getById(id);
 		vue.addData("animal", animalRepo.getById(id));
 		vue.addData("race", animal.getRace());
+		vue.addData("refuge", animal.getRefuge());
 		return "animal";
 	}
 	/*

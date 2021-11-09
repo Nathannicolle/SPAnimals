@@ -7,6 +7,7 @@
 			<h2><% animal.nom %></h2>
 			<p><% animal.description %></p>
 			<a href="#" class="link_animal">Voir la fiche de l'animal</a>
+			<v-btn @click="deleteAnimal(animal)" color="error">supprimer</v-btn>
 		</div>
 	</div>
 </v-app>

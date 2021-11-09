@@ -86,9 +86,9 @@ public class RefugeController {
 		return "listRefuges";
 	}
 
-	@GetMapping("/admin")
+	@GetMapping("/adminPanel")
 	public String showAdmin() {
-		return "admin";
+		return "adminPanel";
 	}
 
 	@PostMapping("connecter")

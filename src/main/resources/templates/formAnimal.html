@@ -1,10 +1,11 @@
 {{> inc/header}}
 <v-app>
 	<v-form class="form_add">
-		<div class="field">
-			<label>Adopte</label>
-			<input type="text" v-model="animal.adopte" required="required" placeholder="Adopte">
-		</div>
+		
+			<v-checkbox
+      v-model="animal.adopte"
+      label="adopté"
+    ></v-checkbox>
 		<div class="field">
 			<label>couleur</label>
 			<input type="text" v-model="animal.couleur" required placeholder="couleur">
@@ -29,12 +30,10 @@
 		
 		<div class="field">
 		
-			<label>SOS</LABEL><br>
-			 <label for="css">Oui</label>
-			  <input type="radio" id="css" v-model="animal.sos" value="1"><br>
-			  <label for="css">Non</label>
-			   <input type="radio" id="css" v-model="animal.sos" value="0"><br>
-		</div><br>
+			 <v-checkbox
+      v-model="animal.sos"
+      label="SOS"
+    ></v-checkbox>
 		
 		<div class="field">
 		<label>Sexe</label><br>
@@ -47,21 +46,20 @@
 			   
 	 <div class="field">
 		<label for="espece">Espece :</label>
-			   <v-select :items="especes" item-text="libelle" v-model="animal.espece" required>
+			   <v-select :items="especes" item-text="libelle" v-model="animal.espece" required return-object>
 				    
 				  </v-select>
 		</div><br>
 		
 		<div class="field">
 		 <label for="race">Race :</label>
-			  <v-select :items="races" item-text="libelle" v-model="animal.race"  required>
-			   
+			  <v-select :items="races" item-text="libelle" v-model="animal.race"  required return-object>
 			  </v-select>
 			  </div><br>
 			  
 			  
 		<label for="refuge">Refuge :</label>
-			  <v-select :items="refuges" item-text="nom" v-model="animal.refuge"  required>
+			  <v-select :items="refuges" item-text="nom" v-model="animal.refuge"  required return-object>
 			    
 			  </v-select><br><br>
 			  

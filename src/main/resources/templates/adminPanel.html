@@ -1,8 +1,41 @@
-{{> inc/header}}
-	<h1>Successfully connected</h1>
-	<a href="/infosRefuge/refuge"><i class="plus icon"></i>Ajouter un Refuge</a>
-	<a href="/jour">Ajouter un jour d'ouverture</a>
-	<a href="/infosRefuge/race">Ajouter une race</a>
-	<a href="/infosRefuge/formEspece">Ajouter une espece</a>
-	<a href="/animals/formAnimal">Ajouter un animal</a>
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Refuge SPA</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.9/vuetify.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<aside class="dashboard_menu">
+		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
+		<ul>
+			<li><a href="#">Animaux</a></li>
+			<li><a href="#">Refuges</a></li>
+		</ul>
+	</aside>
+	<v-app class="dashboard_content">
+		<div class="btn-container">
+			<a href="/infosRefuge/refuge" class="v-btn v-btn--has-bg theme--light v-size--default success"><i class="plus icon"></i>Ajouter un Refuge</a>
+			<a href="/jour" class="v-btn v-btn--has-bg theme--light v-size--default success">Ajouter un jour d'ouverture</a>
+			<a href="/infosRefuge/race" class="v-btn v-btn--has-bg theme--light v-size--default success">Ajouter une race</a>
+			<a href="/infosRefuge/formEspece" class="v-btn v-btn--has-bg theme--light v-size--default success">Ajouter une espece</a>
+			<a href="/animals/formAnimal" class="v-btn v-btn--has-bg theme--light v-size--default success">Ajouter un animal</a>
+		</div>
+		<div class="cards_suggest">
+			<v-card elevation="2">
+				<v-card-title>Voir les refuges</v-card-title>
+				<v-card-text>Vous souhaitez voir les informations des refuges ?</v-card-text>
+				<a href="/animals/formAnimal" class="v-btn v-btn--has-bg theme--light v-size--default primary">Voir</a>
+			</v-card>
+		</div>
+	</v-app>
 {{> inc/footer}}
+{{{vue}}}

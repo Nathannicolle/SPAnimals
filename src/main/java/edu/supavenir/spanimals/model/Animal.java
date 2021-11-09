@@ -19,6 +19,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity(name = "ANIMAL")
 public class Animal implements Serializable {
 
@@ -112,7 +114,7 @@ public class Animal implements Serializable {
 	 *
 	 * @return the current value of dnaissance
 	 */
-	// @JsonFormat(pattern = "DD/MM/YYYY")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	public LocalDate getDnaissance() {
 		return dnaissance;
 	}

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.supavenir.spanimals.model.Animal;
+import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.AnimalRepository;
 import edu.supavenir.spanimals.repositories.EspeceRepository;
 import edu.supavenir.spanimals.repositories.RaceRepository;
@@ -45,7 +46,9 @@ public class AnimalControlleur {
 
 	@GetMapping("/animal/{id}")
 	public String getAnimal(@PathVariable Integer id) {
+		Animal animal = animalRepo.getById(id);
 		vue.addData("animal", animalRepo.getById(id));
+		vue.addData("race", animal.getRace());
 		return "animal";
 	}
 	/*

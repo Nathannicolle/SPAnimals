@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.supavenir.spanimals.model.Animal;
@@ -42,6 +43,11 @@ public class AnimalControlleur {
 
 	}
 
+	@GetMapping("/animal/{id}")
+	public String getAnimal(@PathVariable Integer id) {
+		vue.addData("animal", animalRepo.getById(id));
+		return "animal";
+	}
 	/*
 	 * @GetMapping("/formRace") public String redirectToFormRace() {
 	 * vue.addData("race", raceRepo.findAll()); vue.addData("Race", new Race());

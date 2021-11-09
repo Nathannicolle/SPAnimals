@@ -112,6 +112,7 @@ public class Animal implements Serializable {
 	 *
 	 * @return the current value of dnaissance
 	 */
+	// @JsonFormat(pattern = "DD/MM/YYYY")
 	public LocalDate getDnaissance() {
 		return dnaissance;
 	}

@@ -23,7 +23,7 @@
 				<img src="/img/husky.jpg"/>
 				<h2><% animal.nom %></h2>
 				<p><% animal.description %></p>
-				<a href="#" class="link_animal">Voir la fiche de l'animal</a>
+				<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
 			</div>
 		</div>
 	</div>

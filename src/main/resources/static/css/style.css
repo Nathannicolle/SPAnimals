@@ -328,6 +328,25 @@ td:hover td:before {
 	background-color: #d8800e;
 }
 
+.cardOneAnimal {
+	margin-top: 2%;
+}
+
+.cardOneAnimal p {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.nameAnimal {
+	text-align: center;
+}
+
+.other_informations p {
+	float: left;
+	width: 50%;
+	margin-bottom: 10px;
+}
+
 /*formulaire*/
 
  /* Bordered form */

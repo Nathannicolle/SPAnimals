@@ -1,0 +1,18 @@
+{{> inc/header}}
+<v-app>
+	<div class="card_animal cardOneAnimal">
+		<img src="/img/husky.jpg"/>
+		<h2><% animal.nom %></h2>
+		<div class="listInfoAnimal">
+			<p class="nameAnimal"><% animal.description %></p>
+			<div class="other_informations">
+				<p><b>Frais : </b> <% animal.frais %> €</p>
+				<p><b>Sexe : </b> <% animal.sexe %></p>
+				<p><b>Couleur : </b> <% animal.couleur %></p>
+				<p><b>Date de naissance : </b> <% animal.dnaissance %></p>
+			</div>
+		</div>
+	</div>
+</v-app>
+{{> inc/footer}}
+{{{vue}}}

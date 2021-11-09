@@ -1,5 +1,6 @@
-/* Définitions générales */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* Définitions générales */
 body {
 	font-family: 'Poppins', sans-serif;
 	margin: 0;
@@ -170,7 +171,7 @@ header {
 }
 
 /* Page de refuge */
-table {
+/* table {
 	width: 90%;
 	margin-top: 2%;
 	margin-left: auto;
@@ -187,7 +188,49 @@ table th {
 table td {
 	padding: 1%;
 	border: 1px solid gray;
+} */
+
+table {
+	width: 90%;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	margin-left: auto;
+	margin-right: auto;
 }
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(0,0,0,0.2);
+	color: black;
+}
+
+th {
+	text-align: left;
+	background-color: #55608f;
+	color: white;
+}
+
+tr {
+	transition: 0.2s ease-in-out;
+}
+
+tr:hover {
+	background-color: rgba(0,0,0,0.3);
+}
+
+td:hover td:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -9999px;
+	bottom: -9999px;
+	background-color: rgba(0,0,0,0.2);
+	z-index: -1;
+}
+
 
 .card_refuge {
 	display: flex;

@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity(name = "HORAIRE")
@@ -93,6 +94,7 @@ public class Horaire implements Serializable {
 	 *
 	 * @return the current value of hdebut
 	 */
+	@JsonFormat(pattern = "HH:mm")
 	public LocalTime getHdebut() {
 		return hdebut;
 	}
@@ -111,6 +113,7 @@ public class Horaire implements Serializable {
 	 *
 	 * @return the current value of hfin
 	 */
+	@JsonFormat(pattern = "HH:mm")
 	public LocalTime getHfin() {
 		return hfin;
 	}

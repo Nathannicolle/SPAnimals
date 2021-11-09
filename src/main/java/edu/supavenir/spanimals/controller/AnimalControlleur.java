@@ -37,7 +37,9 @@ public class AnimalControlleur {
 	@GetMapping("/listAnimal")
 	public String getAnimalList() {
 		vue.addData("animals", animalRepo.findAll());
+		vue.addMethod("deleteAnimal", Http.delete("'/rest/animal/'+animal.id", "console.log('supprimé')"), "animal");
 		return "listAnimals";
+
 	}
 
 	/*
@@ -60,7 +62,7 @@ public class AnimalControlleur {
 		vue.addData("races", raceRepo.findAll());
 		vue.addData("especes", especeRepo.findAll());
 		vue.addMethod("addAnimal", Http.post("'/rest/animal/'", "animal", "console.log('animal ajouté')"), "animal");
-		vue.addMethod("deleteAnimal", Http.delete("'/rest/animal/'+animal.id", "console.log('supprimé')"), "animal");
+
 		return "formAnimal";
 	}
 

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Refuge SPA</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.9/vuetify.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<aside class="dashboard_menu">
+		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
+		<ul>
+			<li><a href="/infosRefuge/adminPanel">Accueil</a></li>
+			<li><a href="/animals/listAnimal">Animaux</a></li>
+			<li><a href="/admin/refuges">Refuges</a></li>
+		</ul>
+	</aside>
+	<v-app class="dashboard_content">
+		<h1 class="title_pages">Nos animaux</h1>
+		<div class="animals">
+			<div class="card_animal"  v-for="animal in animals">
+				<img src="/img/husky.jpg"/>
+				<h2><% animal.nom %></h2>
+				<p><% animal.description %></p>
+				<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
+				<v-btn @click="deleteAnimal(animal)" color="error">supprimer</v-btn>
+			</div>
+		</div>
+	</v-app>
+{{> inc/footer}}
+{{{vue}}}

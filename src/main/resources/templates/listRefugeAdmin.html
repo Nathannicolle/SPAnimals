@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Refuge SPA</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.9/vuetify.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<aside class="dashboard_menu">
+		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
+		<ul>
+			<li><a href="/infosRefuge/adminPanel">Accueil</a></li>
+			<li><a href="/admin/listAnimal">Animaux</a></li>
+			<li><a href="/admin/refuges">Refuges</a></li>
+		</ul>
+	</aside>
+	<v-app class="dashboard_content">
+		<h1>Nos refuges</h1>
+		<table>
+			<thead>
+				<tr><th>Nom</th><th>Localisation</th><th>Complément d'adresse</th><th>Code postal</th><th>Ville</th><th>Téléphone</th><th colspan="4">Description</th></tr>
+			</thead>
+				<tr v-for="oneRefuge in refuges">
+				<td><% oneRefuge.nom %></td> 
+				<td><% oneRefuge.localisation %></td> 
+				<td><% oneRefuge.complementad %></td> 
+				<td><% oneRefuge.cp %></td> 
+				<td><% oneRefuge.ville %></td> 
+				<td><% oneRefuge.tel %></td> 
+				<td><% oneRefuge.description %></td>
+				<td><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary"><i class="far fa-eye"></i></a></td>  <td><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn></td><td><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></td>
+				 <!-- <td><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn></td>
+				 <td><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></td> -->
+				 </tr>
+		</table>
+		
+		
+</v-app>
+
+{{> inc/footer}}
+{{{vue}}}

@@ -126,6 +126,15 @@ aside.dashboard_menu li a:hover {
 
 .dashboard_content .v-btn {
 	margin-right: 1%;
+	transition: 0.5s ease-in-out !important;
+}
+
+.dashboard_content .v-btn.v-btn--has-bg.theme--light.v-size--default.success:hover {
+	background-color: #367c39 !important;
+}
+
+.dashboard_content .v-btn.v-btn--has-bg.theme--light.v-size--default.primary:hover {
+	background-color: #1359a0 !important;
 }
 
 .cards_suggest {
@@ -139,6 +148,10 @@ aside.dashboard_menu li a:hover {
 .cards_suggest a {
 	margin-left:5%;
 	margin-bottom: 2%;
+}
+
+.delete_btn {
+	width: 50%;
 }
 
 /* Bannière accueil */

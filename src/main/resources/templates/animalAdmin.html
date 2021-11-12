@@ -23,16 +23,23 @@
 		</ul>
 	</aside>
 	<v-app class="dashboard_content">
-		<h1 class="title_pages">Nos animaux</h1>
-		<div class="animals">
-			<div class="card_animal"  v-for="animal in animals">
-				<img src="/img/husky.jpg"/>
-				<h2><% animal.nom %></h2>
-				<p><% animal.description %></p>
-				<a :href="'/admin/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
+		<div class="card_animal cardOneAnimal">
+			<img src="/img/husky.jpg"/>
+			<h2><% animal.nom %></h2>
+			<div class="listInfoAnimal">
+				<p class="nameAnimal"><% animal.description %></p>
+				<div class="other_informations">
+					<p><b>Frais : </b> <% animal.frais %> €</p>
+					<p><b>Sexe : </b> <% animal.sexe %></p>
+					<p><b>Couleur : </b> <% animal.couleur %></p>
+					<p><b>Date de naissance : </b> <% animal.dnaissance %></p>
+					<p><b>Espece :</b> <span v-for="race in animal.race"><% race.libelle %></span></p>
+					<p><b>Refuge :</b> <span v-for="refuge in animal.refuge"><% refuge.nom %></span></p>
+				</div>
 				<v-btn @click="deleteAnimal(animal)" color="error" class="delete_btn">supprimer</v-btn>
 			</div>
 		</div>
 	</v-app>
 {{> inc/footer}}
 {{{vue}}}
+	

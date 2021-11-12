@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Refuge SPA</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.9/vuetify.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<aside class="dashboard_menu">
+		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
+		<ul>
+			<li><a href="/infosRefuge/adminPanel">Accueil</a></li>
+			<li><a href="/admin/listAnimal">Animaux</a></li>
+			<li><a href="/admin/refuges">Refuges</a></li>
+		</ul>
+	</aside>
+	<v-app class="dashboard_content">
+		<h1 class="title_pages">Bienvenue sur la page du refuge : <% refuge.nom %></h1>
+		
+		<div class="card_refuge">
+			<div class="icon">
+				<i class="fas fa-home"></i>
+			</div>
+			<ul class="mainListRefuge">
+				<li class="refugeName"><b><% refuge.nom %></b></li>
+				<li><b>Localisation :</b> <% refuge.localisation %></li>
+				<li><b>Rue :</b> <% refuge.numeroetrue %></li>
+				<li><b>Complément d'adresse :</b> <% refuge.complementad %></li>
+				<li><b>Code Postal/Ville :</b> <% refuge.cp %> <% refuge.ville %></li>
+				<li><b>Numéro de téléphone :</b> <% refuge.tel %></li>
+				<li><b>Description :</b> <% refuge.description %></li>
+				
+				<li><b>Horaires d'ouverture :</b> 
+					<ul v-for="horaire in refuge.horaire">
+						<li><% horaire.joursemaine.libelle %> - <% horaire.plage.libelle %> : <% horaire.hdebut %> => <% horaire.hfin %></li>
+					</ul>
+				</li>
+			</ul>
+			<v-btn @click="deleteRefuge(oneRefuge)" color="error" class="delete_btn">supprimer</v-btn>
+		</div>
+	</v-app>
+{{> inc/footer}}
+{{{vue}}}

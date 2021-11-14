@@ -1,8 +1,36 @@
-<form action="jourSemaine" method="POST">
-<div class="field">
-<label>Jour</label>
-<input type="text" name="libelle" required="required" placeholder="Jour de la semaine">
-</div>
+<!doctype html>
+<html lang="fr">
 
-<input  type="submit" value="Valider">
-</form>
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Refuge SPA</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.9/vuetify.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<aside class="dashboard_menu">
+		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
+		<ul>
+			<li><a href="/infosRefuge/adminPanel">Accueil</a></li>
+			<li><a href="/admin/listAnimal">Animaux</a></li>
+			<li><a href="/admin/refuges">Refuges</a></li>
+		</ul>
+	</aside>
+	<v-app class="dashboard_content">
+		<v-form class="form_add" action="jourSemaine" method="POST">
+			<div class="field">
+				<label>Jour</label>
+				<input type="text" name="libelle" required="required" placeholder="Jour de la semaine">
+			</div>
+			
+			<input type="submit" value="Valider">
+		</form>
+	</v-app>
+{{> inc/footer}}
+{{{vue}}}

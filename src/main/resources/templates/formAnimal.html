@@ -1,71 +1,87 @@
-{{> inc/header}}
-<v-app>
-	<v-form class="form_add">
-		
-			<v-checkbox
-      v-model="animal.adopte"
-      label="adopté"
-    ></v-checkbox>
-		<div class="field">
-			<label>couleur</label>
-			<input type="text" v-model="animal.couleur" required placeholder="couleur">
-		</div>
-		<div class="field">
-			<label>Description</label>
-			<input type="text" v-model="animal.description" required placeholder="description">
-		</div>
-		<div class="field">
-			<label>Date de Naissance</label>
-			<input type="date" v-model="animal.dnaissance" required >
-		</div>
-		<div class="field">
-			<label>Frais</label>
-			<input type="float" v-model="animal.frais" required placeholder="Frais">
-		</div>
-		<div class="field">
-			<label>Nom</label>
-			<input type="text" v-model="animal.nom" required placeholder="nom">
-		</div>
-		
-		
-		<div class="field">
-		
-			 <v-checkbox
-      v-model="animal.sos"
-      label="SOS"
-    ></v-checkbox>
-		
-		<div class="field">
-		<label>Sexe</label><br>
-		  <input type="radio"  v-model="animal.sexe" value="HTML">
-			  <label for="html">Masculin</label><br>
-			  <input type="radio"  v-model="animal.sexe" value="CSS">
-			  <label for="css">Feminin</label><br>
-		</div><br>	   
-			   
-			   
-	 <div class="field">
-		<label for="espece">Espece :</label>
-			   <v-select :items="especes" item-text="libelle" v-model="animal.espece" required return-object>
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Refuge SPA</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vuetify/2.5.9/vuetify.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<aside class="dashboard_menu">
+		<a href="/"><img src="/img/REFUGES_DE_FRANCE_V2.png" alt="logo Refuges de France" class="logo"></a>
+		<ul>
+			<li><a href="/infosRefuge/adminPanel">Accueil</a></li>
+			<li><a href="/admin/listAnimal">Animaux</a></li>
+			<li><a href="/admin/refuges">Refuges</a></li>
+		</ul>
+	</aside>
+	<v-app class="dashboard_content">
+		<v-form class="form_add">
+			
+				<v-checkbox v-model="animal.adopte" label="adoptÃ©"></v-checkbox>
+			<div class="field">
+				<label>couleur</label>
+				<input type="text" v-model="animal.couleur" required placeholder="couleur">
+			</div>
+			<div class="field">
+				<label>Description</label>
+				<input type="text" v-model="animal.description" required placeholder="description">
+			</div>
+			<div class="field">
+				<label>Date de Naissance</label>
+				<input type="date" v-model="animal.dnaissance" required >
+			</div>
+			<div class="field">
+				<label>Frais</label>
+				<input type="float" v-model="animal.frais" required placeholder="Frais">
+			</div>
+			<div class="field">
+				<label>Nom</label>
+				<input type="text" v-model="animal.nom" required placeholder="nom">
+			</div>
+			
+			
+			<div class="field">
+			
+				 <v-checkbox v-model="animal.sos" label="SOS"></v-checkbox>
+			</div>
+			<div class="field">
+			<label>Sexe</label><br>
+			  <input type="radio"  v-model="animal.sexe" value="HTML">
+				  <label for="html">Masculin</label><br>
+				  <input type="radio"  v-model="animal.sexe" value="CSS">
+				  <label for="css">Feminin</label><br>
+			</div><br>	   
+				   
+				   
+		 <div class="field">
+			<label for="espece">Espece :</label>
+				   <v-select :items="especes" item-text="libelle" v-model="animal.espece" required return-object>
+					    
+					  </v-select>
+			</div><br>
+			
+			<div class="field">
+				<label for="race">Race :</label>
+				<v-select :items="races" item-text="libelle" v-model="animal.race"  required return-object></v-select>
+			</div><br>
+				  
+				  
+			<label for="refuge">Refuge :</label>
+				  <v-select :items="refuges" item-text="nom" v-model="animal.refuge"  required return-object >
 				    
-				  </v-select>
-		</div><br>
-		
-		<div class="field">
-		 <label for="race">Race :</label>
-			  <v-select :items="races" item-text="libelle" v-model="animal.race"  required return-object>
-			  </v-select>
-			  </div><br>
-			  
-			  
-		<label for="refuge">Refuge :</label>
-			  <v-select :items="refuges" item-text="nom" v-model="animal.refuge"  required return-object >
-			    
-			  </v-select><br><br>
-			  
-		<v-btn color="primary" @click="addAnimal(animal)">Valider</v-btn>
-		<!-- <input class="ui primary button" type="submit" value="Valider"> -->
-	</v-form>
-</v-app>
+				  </v-select><br><br>
+				  
+			<v-btn color="primary" @click="addAnimal(animal)">Valider</v-btn>
+			<!-- <input class="ui primary button" type="submit" value="Valider"> -->
+		</v-form>
+	</v-app>
  {{> inc/footer}}
 {{{vue}}}

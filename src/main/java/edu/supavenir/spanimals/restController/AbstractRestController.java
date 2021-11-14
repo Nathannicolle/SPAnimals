@@ -1,4 +1,4 @@
-package edu.supavenir.animals.restController;
+package edu.supavenir.spanimals.restController;
 
 import java.util.List;
 import java.util.Optional;

@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
+import edu.supavenir.animals.technics.CSSMessage;
 import edu.supavenir.spanimals.model.Animal;
 import edu.supavenir.spanimals.model.Refuge;
 import edu.supavenir.spanimals.repositories.AnimalRepository;
@@ -50,6 +53,12 @@ public class AdminControlleur {
 		vue.addData("animals", animalRepo.findAll());
 		vue.addMethod("deleteAnimal", Http.delete("'/rest/animal/'+animal.id", "console.log('supprimé')"), "animal");
 		return "listAnimalAdmin";
+	}
+	
+	@GetMapping("RefugeDeleteConfirmation/{nom}/{id}")
+	public RedirectView deleteConfirmation(@PathVariable String nom, @PathVariable String id, RedirectAttributes attrs) {
+		attrs.addFlashAttribute("msgDelete", CSSMessage.ErrorMessage("Voulez-vous supprimer l'élément <b>" + nom + "</b> ? <br><a href='/admin/listRefugeAdmin' class=\"ui inverted secondary button\">Annuler</a> <v-btn @click=\"deleteRefuge(oneRefuge)\" color=\"error\">Confirmer</v-btn>"));
+		return new RedirectView("listRefugeAdmin");
 	}
 	
 	@GetMapping("/animal/{id}")

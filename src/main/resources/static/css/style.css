@@ -204,17 +204,27 @@ aside.dashboard_menu li a.active {
 	border: none;
 }
 
-.search_form input[type=text] {
+.input_wrapper {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.input_wrapper i {
+	transform: translateX(200%);
+	color: gray;
+}
+
+.search_form .input_wrapper input[type=text] {
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 12px;
 	width: 50% !important;
 	border-radius: 10px;
 	background-color: white;
-	margin-left: auto;
-	margin-right: auto;
 	transition: 0.5s ease-in-out;
+	padding-left: 2%;
 }
 
-.search_form input[type=text]:focus {
+.search_form .input_wrapper input[type=text]:focus {
 	border: 3px solid #3083dc;
 	outline: none;
 }

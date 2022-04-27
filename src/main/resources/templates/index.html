@@ -14,7 +14,10 @@
 	</div>
 	<div class="animals_container">
 		<v-form class="search_form">
-			<input type="text" placeholder="Rechercher un animal">
+			<div class="input_wrapper">
+				<i class="fas fa-search"></i>
+				<input type="text" placeholder="Rechercher un animal">
+			</div>
 			<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search">Rechercher</v-btn> 
 		</v-form>
 		<h2>Nos animaux</h2>

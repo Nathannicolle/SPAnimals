@@ -406,7 +406,26 @@ td:hover td:before {
 
 .card_animal img {
 	width: 100%;
+	position: relative;
+	transition: 0.5s ease-in-out;
 }
+
+.card_animal .overlay {
+	display:none;
+	top: 50%;
+	transform: translateY(50%);
+	position: absolute !important;
+	font-size: 2em;
+	color: white;
+}
+
+.card_animal:hover .overlay {
+	display: block;
+}
+
+.card_animal:hover img {
+	filter: grayscale(100%);
+} 
 
 .card_animal:hover {
 	cursor: pointer;

@@ -24,6 +24,7 @@
 		<div class="animals">
 			<div class="card_animal"  v-for="animal in animals">
 				<img src="/img/husky.jpg"/>
+				<div class="overlay"><i class="fas fa-search-plus"></i></div>
 				<h2><% animal.nom %></h2>
 				<p><% animal.description %></p>
 				<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>

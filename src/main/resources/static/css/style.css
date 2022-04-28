@@ -381,6 +381,16 @@ td:hover td:before {
 }
 
 /* Page listAnimals */
+/* Bannière page animal */
+.animal_banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to left, transparent, #f19820);
+	height: 30vh;
+	box-shadow: inset 0 -15px 5px -16px #111;
+}
+
 .animals {
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
@@ -566,6 +576,12 @@ footer a:hover {
 	color: white;
 }
 
+
+@media screen and (max-width: 1400px) {
+	.search_form .input_wrapper input[type=text] {
+		padding-left: 3%;
+	}
+}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {

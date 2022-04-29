@@ -16,16 +16,16 @@
 		<v-form class="search_form">
 			<div class="input_wrapper">
 				<i class="fas fa-search"></i>
-				<input type="text" placeholder="Rechercher un animal">
+				<input type="text" placeholder="Rechercher un animal" class="search_bar">
 			</div>
-			<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search">Rechercher</v-btn> 
+			<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search" id="btn_search">Rechercher</v-btn> 
 		</v-form>
 		<h2 class="animal_title">Nos animaux</h2>
 		<div class="animals">
 			<div class="card_animal"  v-for="animal in animals">
 				<img src="/img/husky.jpg"/>
 				<div class="overlay"><i class="fas fa-search-plus"></i></div>
-				<h2><% animal.nom %></h2>
+				<h2 class="animal_name"><% animal.nom %></h2>
 				<p><% animal.description %></p>
 				<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
 			</div>

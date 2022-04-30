@@ -13,13 +13,13 @@
 			<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search">Rechercher</v-btn> 
 		</v-form>
 		<div class="animals">
-		<div class="card_animal"  v-for="animal in animals">
-			<img src="/img/husky.jpg"/>
-			<h2><% animal.nom %></h2>
-			<p><% animal.description %></p>
-			<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
+			<div class="card_animal"  v-for="animal in animals">
+				<img src="/img/husky.jpg"/>
+				<h2><% animal.nom %></h2>
+				<p><% animal.description %></p>
+				<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
+			</div>
 		</div>
-	</div>
 	</div>
 </v-app>
 {{> inc/footer}}

@@ -7,7 +7,7 @@
 		<v-form class="search_form">
 				<div class="input_wrapper">
 					<i class="fas fa-search"></i>
-					<input type="text" placeholder="Rechercher un refuge">
+					<input type="text" placeholder="Rechercher un refuge" class="search_bar_refuge">
 				</div>
 				<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search">Rechercher</v-btn> 
 		</v-form>
@@ -15,7 +15,7 @@
 			<thead>
 				<tr><th>Nom</th><th>Localisation</th><th>Complément d'adresse</th><th>Code postal</th><th>Ville</th><th>Téléphone</th><th colspan="4">Description</th></tr>
 			</thead>
-				<tr v-for="oneRefuge in refuges">
+				<tr v-for="oneRefuge in refuges" class="line_refuge">
 				<td><% oneRefuge.nom %></td> 
 				<td><% oneRefuge.localisation %></td> 
 				<td><% oneRefuge.complementad %></td> 

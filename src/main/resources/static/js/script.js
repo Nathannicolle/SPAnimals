@@ -16,7 +16,7 @@ window.addEventListener("load", function(event) {
 		document.querySelector(".search_bar_refuge").addEventListener("keyup", () => {
 			document.querySelectorAll(".line_refuge").forEach((element) => {
 				if(element.innerHTML.toLowerCase().includes(document.querySelector(".search_bar_refuge").value.toLowerCase())) {
-					element.style = "display: flex !important;";
+					element.style = "display:;";
 				} else {
 					element.style = "display: none !important;";
 				}

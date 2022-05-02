@@ -1,14 +1,24 @@
 {{> inc/header}}
 <v-app>
 
-
-	<h1 class="title_pages">Nos animaux</h1>
-	<div class="animals">
-		<div class="card_animal"  v-for="animal in animals">
-			<img src="/img/husky.jpg"/>
-			<h2><% animal.nom %></h2>
-			<p><% animal.description %></p>
-			<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
+	<div class="global_banner">
+		<h1 class="title_pages">Nos animaux</h1>
+	</div>
+		<div class="animals_container">
+		<v-form class="search_form">
+			<div class="input_wrapper">
+				<i class="fas fa-search"></i>
+				<input type="text" placeholder="Rechercher un animal" class="search_bar_animal">
+			</div>
+			<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search" id="btn_search">Rechercher</v-btn> 
+		</v-form>
+		<div class="animals">
+			<div class="card_animal"  v-for="animal in animals">
+				<img src="/img/husky.jpg"/>
+				<h2 class="animal_name"><% animal.nom %></h2>
+				<p><% animal.description %></p>
+				<a :href="'/animals/animal/' + animal.id" class="link_animal">Voir la fiche de l'animal</a>
+			</div>
 		</div>
 	</div>
 </v-app>

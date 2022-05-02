@@ -1,24 +1,34 @@
 {{> inc/header}}
 <v-app>
-	<h1>Nos refuges</h1>
-	<table>
-		<thead>
-			<tr><th>Nom</th><th>Localisation</th><th>Complément d'adresse</th><th>Code postal</th><th>Ville</th><th>Téléphone</th><th colspan="4">Description</th></tr>
-		</thead>
-			<tr v-for="oneRefuge in refuges">
-			<td><% oneRefuge.nom %></td> 
-			<td><% oneRefuge.localisation %></td> 
-			<td><% oneRefuge.complementad %></td> 
-			<td><% oneRefuge.cp %></td> 
-			<td><% oneRefuge.ville %></td> 
-			<td><% oneRefuge.tel %></td> 
-			<td><% oneRefuge.description %></td>
-			<td><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary"><i class="far fa-eye"></i></a></td> 
-			 <!-- <td><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn></td>
-			 <td><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></td> -->
-			 </tr>
-	</table>
-	
+	<div class="global_banner">
+		<h1>Nos refuges</h1>
+	</div>
+	<div class="refuge_container">
+		<v-form class="search_form">
+				<div class="input_wrapper">
+					<i class="fas fa-search"></i>
+					<input type="text" placeholder="Rechercher un refuge" class="search_bar_refuge">
+				</div>
+				<v-btn color="primary" @click="addRefuge(refuge)" class="btn_search">Rechercher</v-btn> 
+		</v-form>
+		<table>
+			<thead>
+				<tr><th>Nom</th><th>Localisation</th><th>Complément d'adresse</th><th>Code postal</th><th>Ville</th><th>Téléphone</th><th colspan="4">Description</th></tr>
+			</thead>
+				<tr v-for="oneRefuge in refuges" class="line_refuge">
+				<td><% oneRefuge.nom %></td> 
+				<td><% oneRefuge.localisation %></td> 
+				<td><% oneRefuge.complementad %></td> 
+				<td><% oneRefuge.cp %></td> 
+				<td><% oneRefuge.ville %></td> 
+				<td><% oneRefuge.tel %></td> 
+				<td><% oneRefuge.description %></td>
+				<td><a :href="'/infosRefuge/refuge/' + oneRefuge.id" class="v-btn v-btn--is-elevated v-btn--has-bg theme--light v-size--default primary"><i class="far fa-eye"></i></a></td> 
+				 <!-- <td><v-btn @click="deleteRefuge(oneRefuge)" color="error">supprimer</v-btn></td>
+				 <td><v-btn @click="modifRefuge(oneRefuge)" color="primary">Modifier</v-btn></td> -->
+				 </tr>
+		</table>
+	</div>
 	
 </v-app>
 

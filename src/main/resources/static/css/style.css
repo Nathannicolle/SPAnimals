@@ -204,17 +204,27 @@ aside.dashboard_menu li a.active {
 	border: none;
 }
 
-.search_form input[type=text] {
+.input_wrapper {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
+
+.input_wrapper i {
+	transform: translateX(200%);
+	color: gray;
+}
+
+.search_form .input_wrapper input[type=text] {
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 12px;
 	width: 50% !important;
 	border-radius: 10px;
 	background-color: white;
-	margin-left: auto;
-	margin-right: auto;
 	transition: 0.5s ease-in-out;
+	padding-left: 2%;
 }
 
-.search_form input[type=text]:focus {
+.search_form .input_wrapper input[type=text]:focus {
 	border: 3px solid #3083dc;
 	outline: none;
 }
@@ -276,6 +286,11 @@ table td {
 	padding: 1%;
 	border: 1px solid gray;
 } */
+
+.refuge_container {
+	min-height: 40vh;
+	padding-bottom: 5%;
+}
 
 table {
 	width: 90%;
@@ -371,11 +386,24 @@ td:hover td:before {
 }
 
 /* Page listAnimals */
+/* Bannière page animal */
+.animal_title {
+	margin-bottom: 2%;
+}
+
+.global_banner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(to left, transparent, #f19820);
+	height: 30vh;
+	box-shadow: inset 0 -15px 5px -16px #111;
+}
+
 .animals {
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
 	grid-row-gap: 20px;
-	margin-top: 2%;
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
@@ -396,7 +424,26 @@ td:hover td:before {
 
 .card_animal img {
 	width: 100%;
+	position: relative;
+	transition: 0.5s ease-in-out;
 }
+
+.card_animal .overlay {
+	display:none;
+	top: 50%;
+	transform: translateY(50%);
+	position: absolute !important;
+	font-size: 2em;
+	color: white;
+}
+
+.card_animal:hover .overlay {
+	display: block;
+}
+
+.card_animal:hover img {
+	filter: grayscale(100%);
+} 
 
 .card_animal:hover {
 	cursor: pointer;
@@ -537,6 +584,12 @@ footer a:hover {
 	color: white;
 }
 
+
+@media screen and (max-width: 1400px) {
+	.search_form .input_wrapper input[type=text] {
+		padding-left: 3%;
+	}
+}
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
